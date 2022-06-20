@@ -8,7 +8,7 @@ class OperatorModel(BaseModel):
 
     freq_min: float = Field(
         default=1.,
-        description='minimum frequency',
+        description='minimum frequency - description',
         gt=0.
     )
     freq_max: float = Field(
