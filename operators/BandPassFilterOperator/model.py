@@ -3,7 +3,7 @@ from pydantic import BaseModel, Field
 
 class OperatorModel(BaseModel):
     """
-    Bandpass filter
+    Bandpass filter test commit
     """
 
     freq_min: float = Field(
