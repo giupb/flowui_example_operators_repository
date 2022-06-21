@@ -1,0 +1,10 @@
+{
+    "name": "ReportGeneratorOperator",
+    "version": "0.1.0",
+    "dockerfile": "Dockerfile-base",
+    "style": {
+        "node_label": "Generate Report",
+        "source_position": "null",
+        "icon_class_name": "fa-solid fa-file-invoice"
+    }
+}

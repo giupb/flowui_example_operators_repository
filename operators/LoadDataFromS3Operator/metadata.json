@@ -1,0 +1,13 @@
+{
+    "name": "LoadDataFromS3Operator",
+    "version": "0.1.0",
+    "dockerfile": "Dockerfile-base",
+    "style": {
+        "node_label": "Load Data from S3",
+        "target_position": "null",
+        "node_style": {
+            "backgroundColor": "#b3cde8"
+        },
+        "icon_class_name": "fas fa-database"
+    }
+}
