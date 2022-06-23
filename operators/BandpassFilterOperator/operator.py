@@ -1,5 +1,6 @@
 from flowuipackage.base_operator import BaseOperator
 from .model import OperatorModel
+from .metadata import metadata
 
 import os
 import spikeinterface.core as sc
@@ -9,10 +10,11 @@ import spikeinterface.widgets as sw
 
 class BandpassFilterOperator(BaseOperator):
     
-    __name__ = "BandPassFilterOperator"
-    __version__ = "0.1.0"
-    __dockerfile__ = "Dockerfile-base"
-    __operator_model__ = OperatorModel
+    # __name__ = "BandPassFilterOperator"
+    # __version__ = "0.1.0"
+    # __dockerfile__ = "Dockerfile-base"
+    # __operator_model__ = OperatorModel
+    BaseOperator.set_metadata(metadata=metadata)
 
 
     def operator_function(self, operator_model: OperatorModel):
