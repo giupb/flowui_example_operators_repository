@@ -17,6 +17,3 @@ class OperatorModel(BaseModel):
         gt=0.
     )
     include_results_in_report: bool = False
-
-    class Config:
-        title = 'BandPassFilterOperator'

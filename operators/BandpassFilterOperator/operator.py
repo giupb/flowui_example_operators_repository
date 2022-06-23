@@ -7,7 +7,7 @@ import spikeinterface.toolkit as st
 import spikeinterface.widgets as sw
 
 
-class BandPassFilterOperator(BaseOperator):
+class BandpassFilterOperator(BaseOperator):
     
     __name__ = "BandPassFilterOperator"
     __version__ = "0.1.0"

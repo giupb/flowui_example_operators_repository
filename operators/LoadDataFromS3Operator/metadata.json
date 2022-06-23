@@ -1,0 +1,9 @@
+{
+    "name": "BandpassFilterOperator",
+    "version": "0.1.0",
+    "dockerfile": "Dockerfile_1",
+    "style": {
+        "node_label": "Band-pass filter",
+        "icon_class_name": "fas fa-filter"
+    }
+}
