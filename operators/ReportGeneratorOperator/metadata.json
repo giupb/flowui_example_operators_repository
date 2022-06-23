@@ -1,9 +1,10 @@
 {
-    "name": "BandpassFilterOperator",
+    "name": "ReportGeneratorOperator",
     "version": "0.1.0",
-    "dockerfile": "Dockerfile_1",
+    "dockerfile": "Dockerfile-base",
     "style": {
-        "node_label": "Band-pass filter",
-        "icon_class_name": "fas fa-filter"
+        "node_label": "Generate Report",
+        "source_position": "null",
+        "icon_class_name": "fa-solid fa-file-invoice"
     }
 }
