@@ -1,0 +1,13 @@
+{
+    "name": "SorterMountainsort4Operator",
+    "version": "0.1.0",
+    "dockerfile": "Dockerfile_1",
+    "style": {
+        "node_label": "Mountainsort 4 sorter",
+        "target_position": "null",
+        "icon_class_name": "fas fa-asterisk",
+        "nodeStyle": {
+            "backgroundColor": "#f2e89d"
+        }
+    }
+}
