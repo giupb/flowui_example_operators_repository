@@ -1,0 +1,9 @@
+{
+    "name": "ComputeMetricsOperator",
+    "version": "0.1.0",
+    "dockerfile": "Dockerfile_1",
+    "style": {
+        "node_label": "Compute metrics",
+        "icon_class_name": "fas fa-check-double"
+    }
+}
