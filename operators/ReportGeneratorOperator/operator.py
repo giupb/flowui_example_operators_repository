@@ -16,12 +16,6 @@ class PDF(FPDF):
 
 class ReportGeneratorOperator(BaseOperator):
 
-    __name__ = "ReportGeneratorOperator"
-    __version__ = "0.1.0"
-    __dockerfile__ = "Dockerfile-base"
-    __operator_model__ = OperatorModel
-
-
     def operator_function(self, operator_model: OperatorModel):
         ########## Operator task ##########
         # Create PDF

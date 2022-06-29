@@ -1,0 +1,10 @@
+{
+    "name": "ToyDatasetOperator",
+    "version": "0.1.0",
+    "dockerfile": "Dockerfile_1",
+    "style": {
+        "node_label": "Create Toy Dataset",
+        "target_position": "null",
+        "icon_class_name": "fas fa-database"
+    }
+}
