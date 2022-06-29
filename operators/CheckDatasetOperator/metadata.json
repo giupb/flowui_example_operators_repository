@@ -1,0 +1,10 @@
+{
+    "name": "CheckDatasetOperator",
+    "version": "0.1.0",
+    "dockerfile": "Dockerfile_1",
+    "style": {
+        "source_position": "null",
+        "node_label": "Check Dataset",
+        "icon_class_name": "fas fa-check"
+    }
+}

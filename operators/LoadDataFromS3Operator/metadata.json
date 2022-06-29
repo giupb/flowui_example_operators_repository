@@ -1,7 +1,7 @@
 {
     "name": "LoadDataFromS3Operator",
     "version": "0.1.0",
-    "dockerfile": "Dockerfile-base",
+    "dockerfile": "Dockerfile_1",
     "style": {
         "node_label": "Load Data from S3",
         "target_position": "null",

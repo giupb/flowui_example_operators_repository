@@ -1,6 +1,5 @@
 from flowuipackage import create_operator
 from .model import OperatorModel
-from .metadata import metadata
 
 import os
 import spikeinterface.core as sc

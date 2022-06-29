@@ -25,6 +25,3 @@ class OperatorModel(BaseModel):
     )
     data_file_type: DataFileType = "csv"
     include_results_in_report: bool = False
-
-    class Config:
-        title = 'LoadDataFromS3Operator'
