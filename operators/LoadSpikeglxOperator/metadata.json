@@ -1,0 +1,13 @@
+{
+    "name": "LoadSpikeglxOperator",
+    "version": "0.1.0",
+    "dockerfile": "Dockerfile_1",
+    "style": {
+        "node_label": "Load SpikeGLX",
+        "icon_class_name": "fas fa-database",
+        "target_position": "null",
+        "nodeStyle": {
+            "backgroundColor": "#b3cde8"
+        }
+    }
+}
