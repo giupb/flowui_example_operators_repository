@@ -6,7 +6,7 @@
         "node_label": "Kilosort 2 sorter",
         "target_position": "null",
         "icon_class_name": "fas fa-asterisk",
-        "nodeStyle": {
+        "node_style": {
             "backgroundColor": "#f2e89d"
         }
     }

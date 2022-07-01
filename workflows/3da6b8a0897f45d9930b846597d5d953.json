@@ -1,0 +1,36 @@
+{
+    "workflow_config": {
+        "name": "workflow_json3",
+        "schedule_interval": null,
+        "start_date": null,
+        "catchup": false,
+        "workflow_id": "3da6b8a0897f45d9930b846597d5d953"
+    },
+    "tasks": {
+        "task_1": {
+            "kwargs": {
+                "freq_min": 0.2,
+                "freq_max": 0.3,
+                "include_results_in_report": true,
+                "dag_id": "tttt",
+                "task_id": "task_1",
+                "operator": "AgreementOperator",
+                "deploy_mode": "local"
+            }
+        },
+        "task_2": {
+            "kwargs": {
+                "freq_min": 1,
+                "freq_max": 300,
+                "include_results_in_report": true,
+                "dag_id": "tttt",
+                "task_id": "task_2",
+                "operator": "BandPassFilterOperator",
+                "deploy_mode": "local"
+            },
+            "dependencies": [
+                "task_1"
+            ]
+        }
+    }
+}

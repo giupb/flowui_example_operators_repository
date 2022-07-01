@@ -6,7 +6,7 @@
         "node_label": "Load OpenEphys",
         "icon_class_name": "fas fa-database",
         "target_position": "null",
-        "nodeStyle": {
+        "node_style": {
             "backgroundColor": "#b3cde8"
         }
     }
