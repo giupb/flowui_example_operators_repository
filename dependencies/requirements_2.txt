@@ -1,0 +1,6 @@
+boto3
+spikeinterface
+matplotlib
+scipy
+scikit-learn
+networkx

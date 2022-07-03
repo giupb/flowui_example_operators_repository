@@ -1,0 +1,4 @@
+from flowuipackage.build_operators_dockerfiles import build_images_from_dependencies_folder
+
+
+build_images_from_dependencies_folder("dependencies")
