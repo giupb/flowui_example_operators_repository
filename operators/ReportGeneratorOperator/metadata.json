@@ -1,7 +1,11 @@
 {
     "name": "ReportGeneratorOperator",
     "version": "0.1.0",
-    "dockerfile": "Dockerfile-base",
+    "dependency": {
+        "docker_base_image": "default",
+        "dockerfile": "default",
+        "requirements_file": "requirements_1.txt"
+    },
     "style": {
         "node_label": "Generate Report",
         "source_position": "null",

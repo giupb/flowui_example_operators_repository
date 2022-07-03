@@ -1,7 +1,11 @@
 {
     "name": "SorterMountainsort4Operator",
     "version": "0.1.0",
-    "dockerfile": "Dockerfile_1",
+    "dependency": {
+        "docker_base_image": "default",
+        "dockerfile": "default",
+        "requirements_file": "requirements_2.txt"
+    },
     "style": {
         "node_label": "Mountainsort 4 sorter",
         "target_position": "null",

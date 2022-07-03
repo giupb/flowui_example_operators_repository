@@ -1,7 +1,11 @@
 {
     "name": "SaveToNwbOperator",
     "version": "0.1.0",
-    "dockerfile": "Dockerfile-base",
+    "dependency": {
+        "docker_base_image": "default",
+        "dockerfile": "default",
+        "requirements_file": "requirements_2.txt"
+    },
     "style": {
         "node_label": "Save to NWB",
         "source_position": "null",

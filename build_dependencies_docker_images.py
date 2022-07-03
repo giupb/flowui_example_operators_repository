@@ -1,4 +1,4 @@
-from flowuipackage.build_operators_dockerfiles import build_images_from_dependencies_folder
+from flowuipackage.build_docker_images_operators import build_images_from_code_repository
 
 
-build_images_from_dependencies_folder("dependencies")
+operators_images_map = build_images_from_code_repository(code_repository=".")

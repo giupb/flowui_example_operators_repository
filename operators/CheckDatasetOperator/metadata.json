@@ -1,7 +1,11 @@
 {
     "name": "CheckDatasetOperator",
     "version": "0.1.0",
-    "dockerfile": "Dockerfile_1",
+    "dependency": {
+        "docker_base_image": "default",
+        "dockerfile": "default",
+        "requirements_file": "requirements_2.txt"
+    },
     "style": {
         "source_position": "null",
         "node_label": "Check Dataset",

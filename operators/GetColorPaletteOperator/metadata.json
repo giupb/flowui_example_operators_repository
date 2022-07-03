@@ -1,7 +1,11 @@
 {
     "name": "GetColorPaletteOperator",
     "version": "0.1.0",
-    "dockerfile": "Dockerfile_1",
+    "dependency": {
+        "docker_base_image": "default",
+        "dockerfile": "default",
+        "requirements_file": "requirements_1.txt"
+    },
     "style": {
         "node_label": "Get color pallete",
         "icon_class_name": "fa-solid fa-palette"

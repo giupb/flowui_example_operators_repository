@@ -1,7 +1,11 @@
 {
     "name": "DownloadImageOperator",
     "version": "0.1.0",
-    "dockerfile": "Dockerfile_1",
+    "dependency": {
+        "docker_base_image": "default",
+        "dockerfile": "default",
+        "requirements_file": "requirements_1.txt"
+    },
     "style": {
         "node_label": "Download Image",
         "target_position": "null",
