@@ -1,0 +1,9 @@
+{
+    "name": "GetColorPaletteOperator",
+    "version": "0.1.0",
+    "dockerfile": "Dockerfile_1",
+    "style": {
+        "node_label": "Get color pallete",
+        "icon_class_name": "fa-solid fa-palette"
+    }
+}

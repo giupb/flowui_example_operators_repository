@@ -1,0 +1,10 @@
+{
+    "name": "DownloadImageOperator",
+    "version": "0.1.0",
+    "dockerfile": "Dockerfile_1",
+    "style": {
+        "node_label": "Download Image",
+        "target_position": "null",
+        "icon_class_name": "fa-solid fa-image"
+    }
+}
