@@ -6,6 +6,9 @@
         "dockerfile": "default",
         "requirements_file": "requirements_1.txt"
     },
+    "tags": [
+        "Example"
+    ],
     "style": {
         "node_label": "Get color pallete",
         "icon_class_name": "fa-solid fa-palette"

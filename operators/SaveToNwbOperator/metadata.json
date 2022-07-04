@@ -6,6 +6,9 @@
         "dockerfile": "default",
         "requirements_file": "requirements_2.txt"
     },
+    "tags": [
+        "SpikeInterface"
+    ],
     "style": {
         "node_label": "Save to NWB",
         "source_position": "null",

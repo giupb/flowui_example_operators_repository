@@ -28,28 +28,10 @@ class LoadDataFromS3Operator(BaseOperator):
                 self.logger.info(f"Dataset {dataset_id} successfully downloaded!")
             else:
                 self.logger.error(err)
-
-        ########## Report task ##########
-        # if operator_model.include_results_in_report:
-        #     self.generate_report(rec=rec)
-        
+ 
         ########## Push results - accessible through XComs ##########
         xcom_obj = {
-            "results_message": "SI extractor data successfully loaded to File System!",
+            "results_message": "Data successfully loaded to File System!",
             "other_custom_info": dict()
         }
         return xcom_obj
-
-
-    # def generate_report(self, rec):
-    #     if not os.path.exists(self.report_path):
-    #         os.makedirs(self.report_path)
-
-    #     f = open(f"{self.report_path}/text.txt", "a")
-    #     f.write(f"Num channels: {rec.get_num_channels()}\n")
-    #     f.write(f"Sampling rate: {rec.get_sampling_frequency()}\n")
-    #     f.write(f"Duration (s): {rec.get_num_frames() / rec.get_sampling_frequency()}")
-    #     f.close()
-
-    #     w_ts = sw.plot_timeseries(rec)
-    #     w_ts.figure.savefig(f"{self.report_path}/figure.png")

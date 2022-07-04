@@ -4,8 +4,11 @@
     "dependency": {
         "docker_base_image": "default",
         "dockerfile": "default",
-        "requirements_file": "requirements_2.txt"
+        "requirements_file": "default"
     },
+    "tags": [
+        "Example"
+    ],
     "style": {
         "node_label": "Load Data from S3",
         "target_position": "null",
