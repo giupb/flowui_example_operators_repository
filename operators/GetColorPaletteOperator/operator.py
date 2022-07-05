@@ -8,7 +8,7 @@ import numpy as np
 import json
 
 
-class DownloadImageOperator(BaseOperator):
+class GetColorPaletteOperator(BaseOperator):
 
     def operator_function(self, operator_model: OperatorModel):
         # Load local image - downloaded with previous task
@@ -41,3 +41,4 @@ class DownloadImageOperator(BaseOperator):
             )
         }
         return xcom_obj
+

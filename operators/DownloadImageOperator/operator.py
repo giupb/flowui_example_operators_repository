@@ -15,6 +15,8 @@ class DownloadImageOperator(BaseOperator):
         img = Image.open(BytesIO(response.content))
 
         image_path = Path(self.results_path) / "image.jpeg"
+        if not Path(self.results_path).is_dir():
+            Path(self.results_path).mkdir(parents=True, exist_ok=True)
         img.save(fp=image_path)
         self.logger.info("Image downloaded")
 
@@ -26,3 +28,4 @@ class DownloadImageOperator(BaseOperator):
             )
         }
         return xcom_obj
+
