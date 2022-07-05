@@ -13,6 +13,7 @@
             "ComputeMetricsOperator",
             "LoadOpenephysOperator",
             "LoadSpikeglxOperator",
+            "ReportGeneratorOperator",
             "SaveToNwbOperator",
             "SorterIronclustOperator",
             "SorterKilosort2Operator",
@@ -24,12 +25,11 @@
         "dependency": {
             "docker_base_image": "default",
             "dockerfile": "default",
-            "requirements_file": "requirements_1.txt"
+            "requirements_file": "requirements_0.txt"
         },
         "operators": [
             "DownloadImageOperator",
-            "GetColorPaletteOperator",
-            "ReportGeneratorOperator"
+            "GetColorPaletteOperator"
         ]
     },
     "flowui-dependency-2": {
