@@ -1,2 +1,6 @@
-Pillow==9.2.0
-numpy==1.23.0
+boto3
+spikeinterface
+matplotlib
+scipy
+scikit-learn
+networkx

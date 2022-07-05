@@ -87,5 +87,5 @@ The `/containers` folder should contain all `requirements.txt` and `Dockerfile` 
 ..../Dockerfile_1
 ..../Dockerfile_2
 ..../requirements_1.txt
-..../requirements_2.txt
+..../requirements_1.txt
 ```

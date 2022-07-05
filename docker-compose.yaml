@@ -19,11 +19,11 @@ x-airflow-common:
         AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY}
         AWS_REGION_NAME: ${AWS_REGION_NAME}
     volumes:
+        # - /var/run/docker.sock:/var/run/docker.sock # necessary for https://stackoverflow.com/questions/61186983/airflow-dockeroperator-connect-sock-connectself-unix-socket-filenotfounderror
         - ./airflow/dags:/opt/airflow/dags
         - ./airflow/logs:/opt/airflow/logs
         - ./airflow/plugins:/opt/airflow/plugins
         - ./flowuipackage:/opt/airflow/flowuipackage
-        - ./requirements:/opt/airflow/requirements
         - ./mnt/fs:/opt/airflow/mnt/fs
     user: "${AIRFLOW_UID:-50000}:0"
     depends_on:
@@ -103,9 +103,32 @@ services:
             airflow-init:
                 condition: service_completed_successfully
 
-    airflow-worker:
+    airflow-worker-flowui-dependency-0:
         <<: *airflow-common
-        command: bash -c "pip install -r requirements/requirements-extended-local.txt && airflow celery worker"
+        image: flowui-dependency-0
+        command: bash -c "pip install -e ./flowuipackage/ && airflow celery worker -q flowui-dependency-0"
+        healthcheck:
+            test:
+                - "CMD-SHELL"
+                - 'celery --app airflow.executors.celery_executor.app inspect ping -d "celery@$${HOSTNAME}"'
+            interval: 10s
+            timeout: 10s
+            retries: 5
+        environment:
+            <<: *airflow-common-env
+            # Required to handle warm shutdown of the celery workers properly
+            # See https://airflow.apache.org/docs/docker-stack/entrypoint.html#signal-propagation
+            DUMB_INIT_SETSID: "0"
+        restart: always
+        depends_on:
+            <<: *airflow-common-depends-on
+            airflow-init:
+                condition: service_completed_successfully
+
+    airflow-worker-flowui-dependency-1:
+        <<: *airflow-common
+        image: flowui-dependency-1
+        command: bash -c "pip install -e ./flowuipackage/ && airflow celery worker -q flowui-dependency-1"
         healthcheck:
             test:
                 - "CMD-SHELL"
@@ -304,6 +327,15 @@ services:
     #         - "3000:3000"
     #     volumes:
     #         - ./frontend:/app # Enable hot reload for frontend
+
+    # Based on: https://onedevblog.com/how-to-fix-a-permission-denied-when-using-dockeroperator-in-airflow/
+    docker-proxy:
+        image: bobrik/socat
+        command: "TCP4-LISTEN:2375,fork,reuseaddr UNIX-CONNECT:/var/run/docker.sock"
+        ports:
+            - "2376:2375"
+        volumes:
+            - /var/run/docker.sock:/var/run/docker.sock
 
 volumes:
     postgres-airflow-volume: null

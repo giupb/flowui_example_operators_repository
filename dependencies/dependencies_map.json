@@ -3,7 +3,7 @@
         "dependency": {
             "docker_base_image": "default",
             "dockerfile": "default",
-            "requirements_file": "requirements_2.txt"
+            "requirements_file": "requirements_1.txt"
         },
         "operators": [
             "AgreementOperator",
@@ -11,7 +11,6 @@
             "CheckDatasetOperator",
             "CommonReferenceOperator",
             "ComputeMetricsOperator",
-            "LoadDataFromS3Operator",
             "LoadOpenephysOperator",
             "LoadSpikeglxOperator",
             "SaveToNwbOperator",
@@ -31,6 +30,16 @@
             "DownloadImageOperator",
             "GetColorPaletteOperator",
             "ReportGeneratorOperator"
+        ]
+    },
+    "flowui-dependency-2": {
+        "dependency": {
+            "docker_base_image": "default",
+            "dockerfile": "default",
+            "requirements_file": "default"
+        },
+        "operators": [
+            "LoadDataFromS3Operator"
         ]
     }
 }
