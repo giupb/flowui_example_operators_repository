@@ -131,3 +131,6 @@ dmypy.json
 
 # Airflow specific ignore
 **/mnt/**
+
+# Docker ignore
+docker-compose.yaml
