@@ -57,7 +57,7 @@ class OperatorModel(BaseModel):
 ### operator.py
 Contains the logic to run your custom code. The Operator you're writing comes here, and it should inherit from FlowUI `BaseOperator`. Example:
 ```
-from flowuipackage.base_operator import BaseOperator
+from flowui.base_operator import BaseOperator
 from .model import OperatorModel
 
 

@@ -1,4 +1,4 @@
-from flowuipackage import create_operator
+from flowui import create_operator
 from .model import OperatorModel
 
 import os

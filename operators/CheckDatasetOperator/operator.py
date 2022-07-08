@@ -1,5 +1,5 @@
-from flowuipackage.base_operator import BaseOperator
-from flowuipackage.client.fs_client import FSClient
+from flowui.base_operator import BaseOperator
+from flowui.client.fs_client import FSClient
 from .model import OperatorModel
 from .metadata import metadata
 

@@ -1,5 +1,5 @@
-from flowuipackage.base_operator import BaseOperator
-from flowuipackage.client.s3_client import S3Client
+from flowui.base_operator import BaseOperator
+from flowui.client.s3_client import S3Client
 from .model import OperatorModel
 
 import os

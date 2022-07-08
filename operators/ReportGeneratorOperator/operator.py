@@ -1,4 +1,4 @@
-from flowuipackage.base_operator import BaseOperator
+from flowui.base_operator import BaseOperator
 from .model import OperatorModel
 
 import os
