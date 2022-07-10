@@ -4,7 +4,7 @@
     "dependency": {
         "docker_base_image": "default",
         "dockerfile": "default",
-        "requirements_file": "default"
+        "requirements_file": "requirements_1.txt"
     },
     "tags": [
         "Example"

@@ -18,7 +18,8 @@
             "SorterIronclustOperator",
             "SorterKilosort2Operator",
             "SorterMountainsort4Operator",
-            "ToyDatasetOperator"
+            "ToyDatasetOperator",
+            "LoadDataFromS3Operator"
         ]
     },
     "flowui-dependency-1": {
@@ -30,16 +31,6 @@
         "operators": [
             "DownloadImageOperator",
             "GetColorPaletteOperator"
-        ]
-    },
-    "flowui-dependency-2": {
-        "dependency": {
-            "docker_base_image": "default",
-            "dockerfile": "default",
-            "requirements_file": "default"
-        },
-        "operators": [
-            "LoadDataFromS3Operator"
         ]
     }
 }
