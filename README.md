@@ -12,9 +12,9 @@ The `/operators` folder should contain your customized Operators. Each Operator 
 ```
 /operators
 ..../ExampleOperator
-......../metadata.json    # REQUIRED
-......../model.py         # REQUIRED
-......../operator.py      # REQUIRED
+......../metadata.json
+......../model.py
+......../operator.py
 ```
 <br>
 
@@ -29,7 +29,8 @@ The simplest `metadata.json` file should contain basic metadata related to the O
         "dockerfile": "default",
         "requirements_file": "requirements_1.txt"
     },
-    "style": {**style_args}
+    "style": {**style_args},
+    "form": {**form_schema}  # THIS WILL BE AUTO-GENERATED
 }
 ```
 <br>
