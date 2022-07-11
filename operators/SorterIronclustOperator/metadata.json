@@ -16,5 +16,17 @@
         "node_style": {
             "backgroundColor": "#f2e89d"
         }
+    },
+    "form_schema": {
+        "title": "OperatorModel",
+        "description": "Ironclust sorter",
+        "type": "object",
+        "properties": {
+            "include_results_in_report": {
+                "title": "Include Results In Report",
+                "default": false,
+                "type": "boolean"
+            }
+        }
     }
 }

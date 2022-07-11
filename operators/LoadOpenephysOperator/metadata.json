@@ -16,5 +16,29 @@
         "node_style": {
             "backgroundColor": "#b3cde8"
         }
+    },
+    "form_schema": {
+        "title": "OperatorModel",
+        "description": "Load Openephys dataset from S3",
+        "type": "object",
+        "properties": {
+            "bucket_name": {
+                "title": "Bucket Name",
+                "description": "this is the name of the bucket",
+                "default": "catalystneuro",
+                "type": "string"
+            },
+            "dataset_path": {
+                "title": "Dataset Path",
+                "description": "this is the path for the dataset",
+                "default": "openephys",
+                "type": "string"
+            },
+            "include_results_in_report": {
+                "title": "Include Results In Report",
+                "default": true,
+                "type": "boolean"
+            }
+        }
     }
 }

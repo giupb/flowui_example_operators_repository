@@ -13,5 +13,31 @@
         "node_label": "Download Image",
         "target_position": "null",
         "icon_class_name": "fa-solid fa-image"
+    },
+    "form_schema": {
+        "title": "OperatorModel",
+        "description": "Download Image from Picsum (https://picsum.photos/)",
+        "type": "object",
+        "properties": {
+            "width_pixels": {
+                "title": "Width Pixels",
+                "description": "Width in number of pixels",
+                "default": 200,
+                "exclusiveMinimum": 10,
+                "type": "integer"
+            },
+            "height_pixels": {
+                "title": "Height Pixels",
+                "description": "Height in number of pixels",
+                "default": 200,
+                "exclusiveMinimum": 10,
+                "type": "integer"
+            },
+            "include_results_in_report": {
+                "title": "Include Results In Report",
+                "default": false,
+                "type": "boolean"
+            }
+        }
     }
 }

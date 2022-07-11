@@ -12,5 +12,31 @@
     "style": {
         "node_label": "Band-pass filter",
         "icon_class_name": "fas fa-filter"
+    },
+    "form_schema": {
+        "title": "OperatorModel",
+        "description": "Bandpass filter test commit",
+        "type": "object",
+        "properties": {
+            "freq_min": {
+                "title": "Freq Min",
+                "description": "minimum frequency - description",
+                "default": 1.0,
+                "exclusiveMinimum": 0.0,
+                "type": "number"
+            },
+            "freq_max": {
+                "title": "Freq Max",
+                "description": "maximum frequency",
+                "default": 300.0,
+                "exclusiveMinimum": 0.0,
+                "type": "number"
+            },
+            "include_results_in_report": {
+                "title": "Include Results In Report",
+                "default": false,
+                "type": "boolean"
+            }
+        }
     }
 }

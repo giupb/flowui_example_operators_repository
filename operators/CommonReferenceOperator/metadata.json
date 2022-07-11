@@ -12,5 +12,36 @@
     "style": {
         "node_label": "Common reference filter",
         "icon_class_name": "fas fa-filter"
+    },
+    "form_schema": {
+        "title": "OperatorModel",
+        "description": "Common reference filter",
+        "type": "object",
+        "properties": {
+            "reference_operator": {
+                "default": "average",
+                "allOf": [
+                    {
+                        "$ref": "#/definitions/ReferenceOperatorType"
+                    }
+                ]
+            },
+            "include_results_in_report": {
+                "title": "Include Results In Report",
+                "default": false,
+                "type": "boolean"
+            }
+        },
+        "definitions": {
+            "ReferenceOperatorType": {
+                "title": "ReferenceOperatorType",
+                "description": "An enumeration.",
+                "enum": [
+                    "average",
+                    "median"
+                ],
+                "type": "string"
+            }
+        }
     }
 }

@@ -16,5 +16,29 @@
             "backgroundColor": "#b9e8b3"
         },
         "icon_class_name": "fas fa-file-export"
+    },
+    "form_schema": {
+        "title": "SaveToNwbOperator",
+        "description": "Save to NWB file",
+        "type": "object",
+        "properties": {
+            "arg_1": {
+                "title": "Arg 1",
+                "description": "this is an argument",
+                "default": "default_value",
+                "type": "string"
+            },
+            "arg_2": {
+                "title": "Arg 2",
+                "description": "this is another argument",
+                "default": "value",
+                "type": "string"
+            },
+            "include_results_in_report": {
+                "title": "Include Results In Report",
+                "default": false,
+                "type": "boolean"
+            }
+        }
     }
 }

@@ -12,5 +12,17 @@
     "style": {
         "node_label": "Agreement comparison",
         "icon_class_name": "fas fa-check-double"
+    },
+    "form_schema": {
+        "title": "OperatorModel",
+        "description": "Agreement comparison",
+        "type": "object",
+        "properties": {
+            "include_results_in_report": {
+                "title": "Include Results In Report",
+                "default": false,
+                "type": "boolean"
+            }
+        }
     }
 }

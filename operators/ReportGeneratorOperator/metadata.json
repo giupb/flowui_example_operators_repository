@@ -13,5 +13,24 @@
         "node_label": "Generate Report",
         "source_position": "null",
         "icon_class_name": "fa-solid fa-file-invoice"
+    },
+    "form_schema": {
+        "title": "ReportGeneratorOperator",
+        "description": "Generate report and save as PDF.",
+        "type": "object",
+        "properties": {
+            "arg_1": {
+                "title": "Arg 1",
+                "description": "this is an argument",
+                "default": "default_value",
+                "type": "string"
+            },
+            "arg_2": {
+                "title": "Arg 2",
+                "description": "this is another argument",
+                "default": "value",
+                "type": "string"
+            }
+        }
     }
 }
