@@ -1,6 +1,2 @@
-boto3
-spikeinterface
-matplotlib
-scipy
-scikit-learn
-networkx
+opencv-python>=4.6.0
+scipy==1.8.1
