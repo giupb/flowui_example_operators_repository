@@ -11,6 +11,7 @@
             "CheckDatasetOperator",
             "CommonReferenceOperator",
             "ComputeMetricsOperator",
+            "LoadDataFromS3Operator",
             "LoadOpenephysOperator",
             "LoadSpikeglxOperator",
             "ReportGeneratorOperator",
@@ -18,8 +19,7 @@
             "SorterIronclustOperator",
             "SorterKilosort2Operator",
             "SorterMountainsort4Operator",
-            "ToyDatasetOperator",
-            "LoadDataFromS3Operator"
+            "ToyDatasetOperator"
         ]
     },
     "flowui-dependency-1": {
