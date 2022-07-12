@@ -90,11 +90,10 @@ class GetColorPaletteOperator(BaseOperator):
     def operator_function(self, operator_model: OperatorModel):
         # Load image downloaded with previous task
         upstream_task_id = list(self.upstream_tasks.keys())[0]
-        previous_task_results_path = self.upstream_tasks[upstream_task_id]["results_path"]
+        previous_task_results_path = self.upstream_tasks[upstream_task_id]["results"]["file_path"]
 
         #Read the image
-        file_path = previous_task_results_path / "filename.jpeg"
-        image = cv2.imread(file_path)
+        image = cv2.imread(previous_task_results_path)
 
         effect_types_map = dict(
             grayscale = apply_grayscale,
@@ -118,7 +117,7 @@ class GetColorPaletteOperator(BaseOperator):
         image_processed = effect_types_map[chosen_effect](img=image)
 
         # Save result
-        out_file_path = Path(self.results_path) / 'filename.jpeg'
+        out_file_path = Path(self.results_path) / Path(previous_task_results_path).name
         cv2.imwrite(out_file_path, image_processed)
 
         ########## Push results - accessible through XComs ##########
