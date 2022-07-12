@@ -18,17 +18,8 @@
         "operators": [
             "DownloadImageOperator",
             "GetColorPaletteOperator",
+            "LoadPhotoFromS3Operator",
             "ReportGeneratorOperator"
-        ]
-    },
-    "flowui-dependency-2": {
-        "dependency": {
-            "docker_base_image": "default",
-            "dockerfile": "default",
-            "requirements_file": "default"
-        },
-        "operators": [
-            "LoadPhotoFromS3Operator"
         ]
     }
 }
