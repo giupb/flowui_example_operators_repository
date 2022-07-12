@@ -13,7 +13,7 @@
         "node_label": "Band-pass filter",
         "icon_class_name": "fas fa-filter"
     },
-    "form_schema": {
+    "input_schema": {
         "title": "OperatorModel",
         "description": "Bandpass filter test commit",
         "type": "object",

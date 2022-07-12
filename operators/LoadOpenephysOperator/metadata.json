@@ -17,7 +17,7 @@
             "backgroundColor": "#b3cde8"
         }
     },
-    "form_schema": {
+    "input_schema": {
         "title": "OperatorModel",
         "description": "Load Openephys dataset from S3",
         "type": "object",

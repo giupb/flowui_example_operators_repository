@@ -13,7 +13,7 @@
         "node_label": "Compute metrics",
         "icon_class_name": "fas fa-check-double"
     },
-    "form_schema": {
+    "input_schema": {
         "title": "OperatorModel",
         "description": "Compute metrics",
         "type": "object",

@@ -14,7 +14,7 @@
         "source_position": "null",
         "icon_class_name": "fa-solid fa-file-invoice"
     },
-    "form_schema": {
+    "input_schema": {
         "title": "ReportGeneratorOperator",
         "description": "Generate report and save as PDF.",
         "type": "object",

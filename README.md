@@ -30,7 +30,7 @@ The simplest `metadata.json` file should contain basic metadata related to the O
         "requirements_file": "requirements_1.txt"
     },
     "style": {**style_args},
-    "form": {**form_schema}  # THIS WILL BE AUTO-GENERATED
+    "form": {**input_schema}  # THIS WILL BE AUTO-GENERATED
 }
 ```
 <br>

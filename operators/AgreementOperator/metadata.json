@@ -13,7 +13,7 @@
         "node_label": "Agreement comparison",
         "icon_class_name": "fas fa-check-double"
     },
-    "form_schema": {
+    "input_schema": {
         "title": "OperatorModel",
         "description": "Agreement comparison",
         "type": "object",
