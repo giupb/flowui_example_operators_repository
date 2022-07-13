@@ -16,5 +16,24 @@
             "backgroundColor": "#b3cde8"
         },
         "icon_class_name": "fas fa-database"
+    },
+    "input_schema": {
+        "title": "OperatorModel",
+        "description": "Upload photo from mounted volume to S3 folder",
+        "type": "object",
+        "properties": {
+            "s3_bucket_name": {
+                "title": "S3 Bucket Name",
+                "description": "this is the name of the bucket",
+                "default": "bucket-name",
+                "type": "string"
+            },
+            "s3_folder_name": {
+                "title": "S3 Folder Name",
+                "description": "this is the folder path within the bucket",
+                "default": "edited",
+                "type": "string"
+            }
+        }
     }
 }

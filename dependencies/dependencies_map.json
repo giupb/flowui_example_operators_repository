@@ -6,7 +6,8 @@
             "requirements_file": "requirements_1.txt"
         },
         "operators": [
-            "ApplyCV2FilterOperator"
+            "ApplyCV2FilterOperator",
+            "PostInstagramOperator"
         ]
     },
     "flowui-dependency-1": {
@@ -16,10 +17,14 @@
             "requirements_file": "requirements_0.txt"
         },
         "operators": [
+            "DownloadFileFromGithubOperator",
             "DownloadImageOperator",
+            "ExampleOperator",
             "GetColorPaletteOperator",
             "LoadPhotoFromS3Operator",
-            "ReportGeneratorOperator"
+            "ReportGeneratorOperator",
+            "UploadFileToGithubOperator",
+            "UploadPhotoToS3Operator"
         ]
     }
 }

@@ -25,7 +25,7 @@
             "bucket_name": {
                 "title": "Bucket Name",
                 "description": "this is the name of the bucket",
-                "default": "atlas-photos",
+                "default": "bucket-name",
                 "type": "string"
             }
         }

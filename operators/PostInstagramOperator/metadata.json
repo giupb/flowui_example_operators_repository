@@ -16,5 +16,18 @@
             "backgroundColor": "#b3cde8"
         },
         "icon_class_name": "fas fa-database"
+    },
+    "input_schema": {
+        "title": "OperatorModel",
+        "description": "Post image on Instagram",
+        "type": "object",
+        "properties": {
+            "arg1": {
+                "title": "Arg1",
+                "description": "description",
+                "default": "default",
+                "type": "string"
+            }
+        }
     }
 }

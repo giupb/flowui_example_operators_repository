@@ -14,5 +14,6 @@ class OperatorModel(BaseModel):
         description='The branch to be used'
     )
     file_path: str = Field(
+        default=None,
         description='The file path within the repository'
     )
