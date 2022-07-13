@@ -7,6 +7,6 @@ class OperatorModel(BaseModel):
     """
 
     bucket_name: str = Field(
-        default='atlas-photos',
+        default='bucket-name',
         description='this is the name of the bucket'
     )

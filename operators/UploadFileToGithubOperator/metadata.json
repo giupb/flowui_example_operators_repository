@@ -1,0 +1,20 @@
+{
+    "name": "UploadFileToGithubOperator",
+    "version": "0.1.0",
+    "dependency": {
+        "docker_base_image": "default",
+        "dockerfile": "default",
+        "requirements_file": "requirements_0.txt"
+    },
+    "tags": [
+        "Example"
+    ],
+    "style": {
+        "node_label": "Upload file to Github",
+        "target_position": "null",
+        "node_style": {
+            "backgroundColor": "#b3cde8"
+        },
+        "icon_class_name": "fas fa-database"
+    }
+}
