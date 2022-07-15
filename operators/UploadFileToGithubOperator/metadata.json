@@ -11,36 +11,8 @@
     ],
     "style": {
         "node_label": "Upload file to Github",
-        "target_position": "null",
         "node_style": {
             "backgroundColor": "#b3cde8"
-        },
-        "icon_class_name": "fas fa-database"
-    },
-    "input_schema": {
-        "title": "OperatorModel",
-        "description": "Upload file to Github",
-        "type": "object",
-        "properties": {
-            "repository_name": {
-                "title": "Repository Name",
-                "description": "The name of the target repository",
-                "type": "string"
-            },
-            "branch": {
-                "title": "Branch",
-                "description": "The branch to be used",
-                "default": "main",
-                "type": "string"
-            },
-            "file_path": {
-                "title": "File Path",
-                "description": "The file path within the repository",
-                "type": "string"
-            }
-        },
-        "required": [
-            "repository_name"
-        ]
+        }
     }
 }

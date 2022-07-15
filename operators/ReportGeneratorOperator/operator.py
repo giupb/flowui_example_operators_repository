@@ -1,5 +1,5 @@
 from flowui.base_operator import BaseOperator
-from .model import OperatorModel
+from .models import InputModel, OutputModel
 
 import os
 import time
@@ -16,7 +16,7 @@ class PDF(FPDF):
 
 class ReportGeneratorOperator(BaseOperator):
 
-    def operator_function(self, operator_model: OperatorModel):
+    def operator_function(self, input_model: InputModel):
         ########## Operator task ##########
         # Create PDF
         pdf = PDF() # A4 (210 by 297 mm)
@@ -47,16 +47,10 @@ class ReportGeneratorOperator(BaseOperator):
 
         # Generate the PDF
         pdf.output(f"{self.run_path}/report.pdf", 'F')
-
-        self._logger.info("Report generated successfully!")
-        
-        ########## Push results - accessible through XComs ##########
-        xcom_obj = {
-            "operator": self.__name__,
-            "message": "Band pass successfully applied!",
-            "results_metadata": dict()
-        }
-        return xcom_obj
+ 
+        return OutputModel(
+            message="Report generated successfully!"
+        )
 
     
     def generate_report(self):
