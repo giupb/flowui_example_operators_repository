@@ -18,9 +18,9 @@
         },
         "operators": [
             "DownloadFileFromGithubOperator",
-            "DownloadImageOperator",
+            "DownloadPicsumImageOperator",
             "ExampleOperator",
-            "GetColorPaletteOperator",
+            "GetColormindPaletteOperator",
             "LoadPhotoFromS3Operator",
             "ReportGeneratorOperator",
             "UploadFileToGithubOperator",
