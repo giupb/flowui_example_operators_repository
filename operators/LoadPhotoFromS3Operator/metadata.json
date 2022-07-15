@@ -11,23 +11,10 @@
     ],
     "style": {
         "node_label": "Load photo from S3",
-        "target_position": "null",
+        "node_type": "source",
         "node_style": {
             "backgroundColor": "#b3cde8"
         },
         "icon_class_name": "fas fa-database"
-    },
-    "input_schema": {
-        "title": "OperatorModel",
-        "description": "Gets photo from S3 path",
-        "type": "object",
-        "properties": {
-            "bucket_name": {
-                "title": "Bucket Name",
-                "description": "this is the name of the bucket",
-                "default": "bucket-name",
-                "type": "string"
-            }
-        }
     }
 }

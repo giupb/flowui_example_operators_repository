@@ -4,20 +4,18 @@ https://github.com/jstolpe/blog_code/blob/master/instagram_graph_api/python/post
 https://developers.facebook.com/docs/instagram-api/
 """
 from flowui.base_operator import BaseOperator
-from .model import OperatorModel
+from .models import InputModel, OutputModel
 
 
 class PostInstagramOperator(BaseOperator):
 
-    def operator_function(self, operator_model: OperatorModel):
+    def operator_function(self, input_model: InputModel):
         # Load image downloaded with previous task
-        upstream_task_id = list(self.upstream_tasks.keys())[0]
-        previous_task_results_path = self.upstream_tasks[upstream_task_id]["results_path"]
+        img_path = input_model.input_image_path
+
+        # Post on instagram
 
         
-
-        ########## Push results - accessible through XComs ##########
-        xcom_obj = {
-            "message": "Photo successfully posted on Instagram",
-        }
-        return xcom_obj
+        return OutputModel(
+            message="Photo successfully posted on Instagram"
+        )

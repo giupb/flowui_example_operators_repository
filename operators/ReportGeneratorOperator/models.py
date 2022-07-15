@@ -1,7 +1,7 @@
 from pydantic import BaseModel, Field
 
 
-class OperatorModel(BaseModel):
+class InputModel(BaseModel):
     """
     Generate report and save as PDF.
     """
@@ -17,3 +17,13 @@ class OperatorModel(BaseModel):
 
     class Config:
         title = 'ReportGeneratorOperator'
+    
+
+class OutputModel(BaseModel):
+    """
+    Generate report and save as PDF.
+    """
+    message: str = Field(
+        default="Report generated successfully!",
+        description="Output message to log"
+    )

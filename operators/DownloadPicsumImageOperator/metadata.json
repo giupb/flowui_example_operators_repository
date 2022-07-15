@@ -1,5 +1,5 @@
 {
-    "name": "DownloadFileFromGithubOperator",
+    "name": "DownloadPicsumImageOperator",
     "version": "0.1.0",
     "dependency": {
         "docker_base_image": "default",
@@ -10,11 +10,8 @@
         "Example"
     ],
     "style": {
-        "node_label": "Download file from Github",
+        "node_label": "Download Image",
         "node_type": "source",
-        "node_style": {
-            "backgroundColor": "#b3cde8"
-        },
-        "icon_class_name": "fas fa-database"
+        "icon_class_name": "fa-solid fa-image"
     }
 }

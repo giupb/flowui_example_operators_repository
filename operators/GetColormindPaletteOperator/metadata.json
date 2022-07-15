@@ -1,5 +1,5 @@
 {
-    "name": "UploadFileToGithubOperator",
+    "name": "GetColormindPaletteOperator",
     "version": "0.1.0",
     "dependency": {
         "docker_base_image": "default",
@@ -10,9 +10,7 @@
         "Example"
     ],
     "style": {
-        "node_label": "Upload file to Github",
-        "node_style": {
-            "backgroundColor": "#b3cde8"
-        }
+        "node_label": "Get Colormind pallete",
+        "icon_class_name": "fa-solid fa-palette"
     }
 }

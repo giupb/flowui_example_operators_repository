@@ -11,26 +11,7 @@
     ],
     "style": {
         "node_label": "Generate Report",
-        "source_position": "null",
+        "node_type": "sink",
         "icon_class_name": "fa-solid fa-file-invoice"
-    },
-    "input_schema": {
-        "title": "ReportGeneratorOperator",
-        "description": "Generate report and save as PDF.",
-        "type": "object",
-        "properties": {
-            "arg_1": {
-                "title": "Arg 1",
-                "description": "this is an argument",
-                "default": "default_value",
-                "type": "string"
-            },
-            "arg_2": {
-                "title": "Arg 2",
-                "description": "this is another argument",
-                "default": "value",
-                "type": "string"
-            }
-        }
     }
 }

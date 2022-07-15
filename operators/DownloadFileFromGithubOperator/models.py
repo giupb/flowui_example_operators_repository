@@ -1,9 +1,9 @@
 from pydantic import BaseModel, Field
 
 
-class OperatorModel(BaseModel):
+class InputModel(BaseModel):
     """
-    Upload file to Github
+    Download random file from Github
     """
 
     repository_name: str = Field(
@@ -14,6 +14,19 @@ class OperatorModel(BaseModel):
         description='The branch to be used'
     )
     file_path: str = Field(
-        default=None,
         description='The file path within the repository'
+    )
+
+
+class OutputModel(BaseModel):
+    """
+    Download random file from Github
+    """
+
+    message: str = Field(
+        default="",
+        description="Output message to log"
+    )
+    output_file_path: str = Field(
+        description='The path to the downloaded file'
     )
