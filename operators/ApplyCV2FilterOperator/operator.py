@@ -2,13 +2,12 @@
 Inspired by: https://www.analyticsvidhya.com/blog/2021/07/an-interesting-opencv-application-creating-filters-like-instagram-and-picsart/#h2_6
 """
 from flowui.base_operator import BaseOperator
-from .model import OperatorModel
+from .models import InputModel, OutputModel
 
 from pathlib import Path
 import random
 import cv2
 import numpy as np
-import scipy
 from scipy.interpolate import UnivariateSpline
 
 
@@ -87,7 +86,7 @@ def apply_winter(img):
 
 class GetColorPaletteOperator(BaseOperator):
 
-    def operator_function(self, operator_model: OperatorModel):
+    def operator_function(self, input_model: InputModel):
         # Load image downloaded with previous task
         upstream_task_id = list(self.upstream_tasks.keys())[0]
         previous_task_results_path = self.upstream_tasks[upstream_task_id]["results"]["file_path"]
@@ -109,7 +108,7 @@ class GetColorPaletteOperator(BaseOperator):
             winter = apply_winter
         )
 
-        chosen_effect = operator_model.effect
+        chosen_effect = input_model.effect
         if chosen_effect == "random":
             effects_list = list(effect_types_map.keys())
             chosen_effect = effects_list[random.randint(0, len(effects_list) - 1)]
@@ -120,11 +119,7 @@ class GetColorPaletteOperator(BaseOperator):
         out_file_path = Path(self.results_path) / Path(previous_task_results_path).name
         cv2.imwrite(out_file_path, image_processed)
 
-        ########## Push results - accessible through XComs ##########
-        xcom_obj = {
-            "message": f"Filtered image successfully saved to: {out_file_path}",
-            "results": dict(
-                file_path=str(out_file_path)
-            )
-        }
-        return xcom_obj
+        return OutputModel(
+            message=f"Filtered image successfully saved to: {out_file_path}",
+            output_file_path=str(out_file_path)
+        )

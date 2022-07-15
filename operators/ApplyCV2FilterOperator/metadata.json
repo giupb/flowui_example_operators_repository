@@ -11,47 +11,9 @@
     ],
     "style": {
         "node_label": "Apply filter",
-        "target_position": "null",
         "node_style": {
             "backgroundColor": "#b3cde8"
         },
         "icon_class_name": "fas fa-database"
-    },
-    "input_schema": {
-        "title": "OperatorModel",
-        "description": "Apply effect to image",
-        "type": "object",
-        "properties": {
-            "effect": {
-                "description": "Effect to be applied",
-                "default": "random",
-                "allOf": [
-                    {
-                        "$ref": "#/definitions/EffectType"
-                    }
-                ]
-            }
-        },
-        "definitions": {
-            "EffectType": {
-                "title": "EffectType",
-                "description": "An enumeration.",
-                "enum": [
-                    "random",
-                    "grayscale",
-                    "bright",
-                    "dark",
-                    "sharp",
-                    "sepia",
-                    "pencil",
-                    "pencil_color",
-                    "hdr",
-                    "invert",
-                    "summer",
-                    "winter"
-                ],
-                "type": "string"
-            }
-        }
     }
 }
