@@ -1,5 +1,5 @@
 from flowui.base_operator import BaseOperator
-from .model import OperatorModel
+from .models import InputModel, OutputModel
 
 import requests
 from pathlib import Path
@@ -8,14 +8,10 @@ import numpy as np
 import json
 
 
-class GetColorPaletteOperator(BaseOperator):
+class GetColormindPaletteOperator(BaseOperator):
 
-    def operator_function(self, operator_model: OperatorModel):
-        # Load local image - downloaded with previous task
-        upstream_task_id = list(self.upstream_tasks.keys())[0]
-        previous_task_results_path = self.upstream_tasks[upstream_task_id]["results_path"]
-
-        img_path = Path(previous_task_results_path) / "image.jpeg"
+    def operator_function(self, input_model: InputModel):
+        img_path = str(Path(input_model.input_file_path).resolve())
         img = Image.open(img_path)
         img_array = np.array(img)
         img_reshaped = str(img_array.reshape((40000, 3)).tolist())
@@ -33,12 +29,8 @@ class GetColorPaletteOperator(BaseOperator):
         with open(palette_path, "w") as f:
             f.write(json_object)
 
-        ########## Push results - accessible through XComs ##########
-        xcom_obj = {
-            "message": f"Palette successfully saved to: {palette_path}",
-            "other_custom_info": dict(
-                palette_path=str(palette_path)
-            )
-        }
-        return xcom_obj
+        return OutputModel(
+            message="Palette successfully generated!",
+            output_palette_path=str(palette_path)
+        )
 

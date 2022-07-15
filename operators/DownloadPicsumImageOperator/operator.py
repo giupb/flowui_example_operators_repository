@@ -1,5 +1,5 @@
 from flowui.base_operator import BaseOperator
-from .model import OperatorModel
+from .models import InputModel, OutputModel
 
 import requests
 from pathlib import Path
@@ -7,16 +7,14 @@ from io import BytesIO
 from PIL import Image
 
 
-class DownloadImageOperator(BaseOperator):
+class DownloadPicsumImageOperator(BaseOperator):
 
-    def operator_function(self, operator_model: OperatorModel):
+    def operator_function(self, input_model: InputModel):
         # Request random image
-        response = requests.get(f'https://picsum.photos/{operator_model.width_pixels}/{operator_model.height_pixels}')
+        response = requests.get(f'https://picsum.photos/{input_model.width_pixels}/{input_model.height_pixels}')
         img = Image.open(BytesIO(response.content))
 
-        image_path = Path(self.results_path) / "image.jpeg"
-        if not Path(self.results_path).is_dir():
-            Path(self.results_path).mkdir(parents=True, exist_ok=True)
+        image_path = str(Path(self.results_path) / "image.jpeg")
         img.save(fp=image_path)
         self.logger.info("Image downloaded")
 
@@ -27,5 +25,8 @@ class DownloadImageOperator(BaseOperator):
                 image_path=str(image_path)
             )
         }
-        return xcom_obj
+        return OutputModel(
+            message="Image successfully downloaded!",
+            output_file_path=image_path
+        )
 

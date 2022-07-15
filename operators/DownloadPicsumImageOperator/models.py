@@ -1,7 +1,7 @@
 from pydantic import BaseModel, Field
 
 
-class OperatorModel(BaseModel):
+class InputModel(BaseModel):
     """
     Download Image from Picsum (https://picsum.photos/)
     """
@@ -16,4 +16,17 @@ class OperatorModel(BaseModel):
         description='Height in number of pixels',
         gt=10
     )
-    include_results_in_report: bool = False
+
+
+class OutputModel(BaseModel):
+    """
+    Download Image from Picsum (https://picsum.photos/)
+    """
+
+    message: str = Field(
+        default="",
+        description="Output message to log"
+    )
+    output_file_path: str = Field(
+        description='The path to the downloaded file'
+    )

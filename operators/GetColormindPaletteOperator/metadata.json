@@ -1,5 +1,5 @@
 {
-    "name": "ExampleOperator",
+    "name": "GetColormindPaletteOperator",
     "version": "0.1.0",
     "dependency": {
         "docker_base_image": "default",
@@ -10,11 +10,7 @@
         "Example"
     ],
     "style": {
-        "node_label": "Example Operator",
-        "node_type": "default",
-        "node_style": {
-            "backgroundColor": "#b3cde8"
-        },
-        "icon_class_name": "fas fa-database"
+        "node_label": "Get Colormind pallete",
+        "icon_class_name": "fa-solid fa-palette"
     }
 }
