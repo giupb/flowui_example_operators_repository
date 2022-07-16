@@ -2,8 +2,6 @@
     "name": "LoadPhotoFromS3Operator",
     "version": "0.1.0",
     "dependency": {
-        "docker_base_image": "default",
-        "dockerfile": "default",
         "requirements_file": "requirements_0.txt"
     },
     "tags": [

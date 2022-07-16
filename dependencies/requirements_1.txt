@@ -1,4 +1,0 @@
-opencv-python
-scipy
-boto3
-psycopg2-binary

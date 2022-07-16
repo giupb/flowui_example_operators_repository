@@ -2,9 +2,7 @@
     "name": "PostInstagramOperator",
     "version": "0.1.0",
     "dependency": {
-        "docker_base_image": "default",
-        "dockerfile": "default",
-        "requirements_file": "requirements_1.txt"
+        "dockerfile": "Dockerfile_0"
     },
     "tags": [
         "Example"

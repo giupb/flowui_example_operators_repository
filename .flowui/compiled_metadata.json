@@ -3,9 +3,9 @@
         "name": "ApplyCV2FilterOperator",
         "version": "0.1.0",
         "dependency": {
-            "docker_base_image": "default",
-            "dockerfile": "default",
-            "requirements_file": "requirements_1.txt"
+            "docker_image": null,
+            "dockerfile": "Dockerfile_0",
+            "requirements_file": null
         },
         "operator_type": "default",
         "tags": [
@@ -93,8 +93,8 @@
         "name": "DownloadFileFromGithubOperator",
         "version": "0.1.0",
         "dependency": {
-            "docker_base_image": "default",
-            "dockerfile": "default",
+            "docker_image": null,
+            "dockerfile": null,
             "requirements_file": "requirements_0.txt"
         },
         "operator_type": "default",
@@ -166,8 +166,8 @@
         "name": "DownloadPicsumImageOperator",
         "version": "0.1.0",
         "dependency": {
-            "docker_base_image": "default",
-            "dockerfile": "default",
+            "docker_image": null,
+            "dockerfile": null,
             "requirements_file": "requirements_0.txt"
         },
         "operator_type": "default",
@@ -233,8 +233,8 @@
         "name": "ExampleOperator",
         "version": "0.1.0",
         "dependency": {
-            "docker_base_image": "default",
-            "dockerfile": "default",
+            "docker_image": null,
+            "dockerfile": null,
             "requirements_file": "requirements_0.txt"
         },
         "operator_type": "default",
@@ -290,8 +290,8 @@
         "name": "GetColormindPaletteOperator",
         "version": "0.1.0",
         "dependency": {
-            "docker_base_image": "default",
-            "dockerfile": "default",
+            "docker_image": null,
+            "dockerfile": null,
             "requirements_file": "requirements_0.txt"
         },
         "operator_type": "default",
@@ -374,8 +374,8 @@
         "name": "LoadPhotoFromS3Operator",
         "version": "0.1.0",
         "dependency": {
-            "docker_base_image": "default",
-            "dockerfile": "default",
+            "docker_image": null,
+            "dockerfile": null,
             "requirements_file": "requirements_0.txt"
         },
         "operator_type": "default",
@@ -433,9 +433,9 @@
         "name": "PostInstagramOperator",
         "version": "0.1.0",
         "dependency": {
-            "docker_base_image": "default",
-            "dockerfile": "default",
-            "requirements_file": "requirements_1.txt"
+            "docker_image": null,
+            "dockerfile": "Dockerfile_0",
+            "requirements_file": null
         },
         "operator_type": "default",
         "tags": [
@@ -486,8 +486,8 @@
         "name": "ReportGeneratorOperator",
         "version": "0.1.0",
         "dependency": {
-            "docker_base_image": "default",
-            "dockerfile": "default",
+            "docker_image": null,
+            "dockerfile": null,
             "requirements_file": "requirements_0.txt"
         },
         "operator_type": "default",
@@ -543,8 +543,8 @@
         "name": "UploadFileToGithubOperator",
         "version": "0.1.0",
         "dependency": {
-            "docker_base_image": "default",
-            "dockerfile": "default",
+            "docker_image": null,
+            "dockerfile": null,
             "requirements_file": "requirements_0.txt"
         },
         "operator_type": "default",
@@ -615,8 +615,8 @@
         "name": "UploadPhotoToS3Operator",
         "version": "0.1.0",
         "dependency": {
-            "docker_base_image": "default",
-            "dockerfile": "default",
+            "docker_image": null,
+            "dockerfile": null,
             "requirements_file": "requirements_0.txt"
         },
         "operator_type": "default",
