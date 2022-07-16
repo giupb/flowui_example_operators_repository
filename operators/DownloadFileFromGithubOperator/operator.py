@@ -7,7 +7,7 @@ import random
 import io
 
 
-class DownoadFileFromGithubOperator(BaseOperator):
+class DownloadFileFromGithubOperator(BaseOperator):
     
     def operator_function(self, input_model: InputModel):
         github_client = GithubRestClient()
