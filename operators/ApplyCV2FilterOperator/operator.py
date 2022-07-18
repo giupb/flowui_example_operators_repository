@@ -112,7 +112,7 @@ class ApplyCV2FilterOperator(BaseOperator):
         image_processed = effect_types_map[chosen_effect](img=image)
 
         # Save result
-        out_file_path = Path(self.results_path) / Path(input_model.input_file_path).name
+        out_file_path = str(Path(self.results_path) / Path(input_model.input_file_path).name)
         cv2.imwrite(out_file_path, image_processed)
 
         return OutputModel(
