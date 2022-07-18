@@ -84,7 +84,7 @@ def apply_winter(img):
     return cv2.merge((blue_channel, green_channel, red_channel))
 
 
-class GetColorPaletteOperator(BaseOperator):
+class ApplyCV2FilterOperator(BaseOperator):
 
     def operator_function(self, input_model: InputModel):
         # Load image downloaded with previous task
