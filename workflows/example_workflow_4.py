@@ -3,7 +3,6 @@ from datetime import datetime
 from dateutil.parser import parse
 from airflow import DAG
 from flowui.tasks.task import Task
-from flowui.schemas.from_upstream import FromUpstream
 
 
 dag_config_0 = {'schedule_interval': '@once', 'start_date': '2022-01-10', 'catchup': False, 'dag_id': 'example_workflow_4'}
