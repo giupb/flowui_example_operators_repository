@@ -2,6 +2,7 @@ from flowui.base_operator import BaseOperator
 from flowui.client.github_rest_client import GithubRestClient
 from .models import InputModel, OutputModel
 
+from pathlib import Path
 import PIL.Image as Image
 import random
 import io
@@ -20,7 +21,7 @@ class DownloadFileFromGithubOperator(BaseOperator):
         random_obj = all_files[random.randint(0, len(all_files) - 1)]
 
         image = Image.open(io.BytesIO(random_obj.decoded_content))
-        output_file_path = str(self.results_path / random_obj.name)
+        output_file_path = str(Path(self.results_path) / random_obj.name)
         image.save(output_file_path)
 
         return OutputModel(
