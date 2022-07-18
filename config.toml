@@ -9,3 +9,8 @@ FLOWUI_PATH_HOST = /media/luiz/storage/Github/flowui
 # CODE_REPOSITORY_SOURCE = local | github
 CODE_REPOSITORY_SOURCE = local
 GITHUB_REPOSITORY_NAME = Tauffer-Consulting/flowui_example_project
+
+[secrets]
+SECRETS_ENV_VARS = [
+    "GITHUB_ACCESS_TOKEN"
+]
