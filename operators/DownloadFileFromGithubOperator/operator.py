@@ -15,7 +15,7 @@ class DownloadFileFromGithubOperator(BaseOperator):
         # Copy photo from Github repository to mounted volume
         all_files = github_client.list_contents(
             repo_name=input_model.repository_name,
-            folder_path=input_model.file_path,
+            folder_path=input_model.folder_path,
         )
         random_obj = all_files[random.randint(0, len(all_files) - 1)]
 
