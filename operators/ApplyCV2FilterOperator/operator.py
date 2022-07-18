@@ -87,12 +87,8 @@ def apply_winter(img):
 class ApplyCV2FilterOperator(BaseOperator):
 
     def operator_function(self, input_model: InputModel):
-        # Load image downloaded with previous task
-        upstream_task_id = list(self.upstream_tasks.keys())[0]
-        previous_task_results_path = self.upstream_tasks[upstream_task_id]["results"]["file_path"]
-
         #Read the image
-        image = cv2.imread(previous_task_results_path)
+        image = cv2.imread(input_model.input_file_path)
 
         effect_types_map = dict(
             grayscale = apply_grayscale,
@@ -116,7 +112,7 @@ class ApplyCV2FilterOperator(BaseOperator):
         image_processed = effect_types_map[chosen_effect](img=image)
 
         # Save result
-        out_file_path = Path(self.results_path) / Path(previous_task_results_path).name
+        out_file_path = Path(self.results_path) / Path(input_model.input_file_path).name
         cv2.imwrite(out_file_path, image_processed)
 
         return OutputModel(
