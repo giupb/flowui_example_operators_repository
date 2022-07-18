@@ -23,13 +23,6 @@ class DownloadFileFromGithubOperator(BaseOperator):
         output_file_path = str(self.report_path / random_obj.name)
         image.save(output_file_path)
 
-        ########## Push results - accessible through XComs ##########
-        xcom_obj = {
-            "results_message": "Photo successfully downloaded to results path!",
-            "results": dict(
-                file_path=output_file_path
-            )
-        }
         return OutputModel(
             message="Photo successfully downloaded to results path!",
             output_file_path=output_file_path

@@ -13,8 +13,8 @@ class InputModel(BaseModel):
         default="main",
         description='The branch to be used'
     )
-    file_path: str = Field(
-        description='The file path within the repository'
+    folder_path: str = Field(
+        description='The folder path within the repository'
     )
 
 

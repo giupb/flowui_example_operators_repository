@@ -129,15 +129,15 @@
                     "default": "main",
                     "type": "string"
                 },
-                "file_path": {
-                    "title": "File Path",
-                    "description": "The file path within the repository",
+                "folder_path": {
+                    "title": "Folder Path",
+                    "description": "The folder path within the repository",
                     "type": "string"
                 }
             },
             "required": [
                 "repository_name",
-                "file_path"
+                "folder_path"
             ]
         },
         "output_schema": {
