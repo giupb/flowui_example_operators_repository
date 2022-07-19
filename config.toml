@@ -1,16 +1,19 @@
 [project]
-PROJECT_NAME = example-project
-# FLOWUI_DEPLOY_MODE = local-bash | local-python | local-k8s 
-FLOWUI_DEPLOY_MODE = local-bash
-VOLUME_MOUNT_PATH_HOST = /media/luiz/storage/Github/flowui_example_project/mnt/fs
-FLOWUI_PATH_HOST = /media/luiz/storage/Github/flowui
+PROJECT_NAME = "example-project"
+
+# Deploy mode = local-bash | local-python | local-k8s 
+FLOWUI_DEPLOY_MODE = "local-bash"
+
+VOLUME_MOUNT_PATH_HOST = "/media/luiz/storage/Github/flowui_example_project/mnt/fs"
+
+FLOWUI_PATH_HOST = "/media/luiz/storage/Github/flowui"
+
+# A list of secrets used by the Operators in this repository
+OPERATORS_SECRETS = [
+    "GITHUB_ACCESS_TOKEN"
+]
 
 [code-repository]
 # CODE_REPOSITORY_SOURCE = local | github
-CODE_REPOSITORY_SOURCE = local
-GITHUB_REPOSITORY_NAME = Tauffer-Consulting/flowui_example_project
-
-[secrets]
-SECRETS_ENV_VARS = [
-    "GITHUB_ACCESS_TOKEN"
-]
+CODE_REPOSITORY_SOURCE = "local"
+GITHUB_REPOSITORY_NAME = "Tauffer-Consulting/flowui_example_project"
