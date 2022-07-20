@@ -1,4 +1,4 @@
-# flowui_example_project
+# FlowUI example project
 A basic FlowUI project should be structured in the following way:
 ```
 /dependencies
