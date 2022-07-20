@@ -3,7 +3,7 @@ A basic FlowUI project should be structured in the following way:
 ```
 /dependencies
 /operators
-config.ini
+config.toml
 ```
 
 
@@ -92,8 +92,8 @@ The `/dependencies` folder should contain all the `requirements.txt` and `Docker
 
 <br>
 
-# config.ini
-The `config.ini` file stores the configuration variables for the project.
+# config.toml
+The `config.toml` file stores the configuration variables for the project.
 
 <br>
 
