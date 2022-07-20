@@ -12,8 +12,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+        with:
+          persist-credentials: false # otherwise, the token used is the GITHUB_TOKEN, instead of your personal access token.
+          fetch-depth: 0 # otherwise, there would be errors pushing refs to the destination repository.
 
-      - name: Set up Python 3.10
+      - name: Set up Python 3.8
         uses: actions/setup-python@v3
         with:
           python-version: "3.8"
@@ -26,12 +29,15 @@ jobs:
       - name: Run organize
         run: flowui organize
 
-      - name: Get changed files
-        id: changed-files
-        uses: tj-actions/changed-files@v23.2
-
-      - name: List all changed files
+      - name: Commit files
         run: |
-          for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
-            echo "$file was changed"
-          done
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add ./flowui
+          git commit -m "auto-organize" -a
+
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN_AUTO_ORGANIZE }}
+          branch: ${{ github.ref }}
