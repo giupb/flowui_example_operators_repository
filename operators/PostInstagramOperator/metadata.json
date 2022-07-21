@@ -1,6 +1,5 @@
 {
     "name": "PostInstagramOperator",
-    "version": "0.1.0",
     "dependency": {
         "dockerfile": "Dockerfile_0"
     },

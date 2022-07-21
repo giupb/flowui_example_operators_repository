@@ -1,6 +1,5 @@
 {
     "name": "UploadPhotoToS3Operator",
-    "version": "0.1.0",
     "dependency": {
         "requirements_file": "requirements_0.txt"
     },

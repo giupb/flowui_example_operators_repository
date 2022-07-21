@@ -1,171 +1,25 @@
 {
-    "DownloadFileFromGithubOperator": {
-        "name": "DownloadFileFromGithubOperator",
-        "version": "0.1.0",
-        "dependency": {
-            "docker_image": null,
-            "dockerfile": null,
-            "requirements_file": "requirements_0.txt"
-        },
-        "operator_type": "default",
-        "tags": [
-            "Example"
-        ],
-        "style": {
-            "node_label": "Download file from Github",
-            "icon_class_name": "fas fa-database",
-            "node_style": {
-                "backgroundColor": "#b3cde8"
-            },
-            "node_type": "source"
-        },
-        "useIcon": true,
-        "iconStyle": {
-            "cursor": "pointer"
-        },
-        "input_schema": {
-            "title": "InputModel",
-            "description": "Download random file from Github",
-            "type": "object",
-            "properties": {
-                "repository_name": {
-                    "title": "Repository Name",
-                    "description": "The name of the target repository",
-                    "type": "string"
-                },
-                "branch": {
-                    "title": "Branch",
-                    "description": "The branch to be used",
-                    "default": "main",
-                    "type": "string"
-                },
-                "folder_path": {
-                    "title": "Folder Path",
-                    "description": "The folder path within the repository",
-                    "type": "string"
-                }
-            },
-            "required": [
-                "repository_name",
-                "folder_path"
-            ]
-        },
-        "output_schema": {
-            "title": "OutputModel",
-            "description": "Download random file from Github",
-            "type": "object",
-            "properties": {
-                "message": {
-                    "title": "Message",
-                    "description": "Output message to log",
-                    "default": "",
-                    "type": "string"
-                },
-                "output_file_path": {
-                    "title": "Output File Path",
-                    "description": "The path to the downloaded file",
-                    "type": "string"
-                }
-            },
-            "required": [
-                "output_file_path"
-            ]
-        }
-    },
-    "UploadPhotoToS3Operator": {
-        "name": "UploadPhotoToS3Operator",
-        "version": "0.1.0",
-        "dependency": {
-            "docker_image": null,
-            "dockerfile": null,
-            "requirements_file": "requirements_0.txt"
-        },
-        "operator_type": "default",
-        "tags": [
-            "Example"
-        ],
-        "style": {
-            "node_label": "Upload photo to S3",
-            "icon_class_name": "fa-solid fa-circle",
-            "node_style": {
-                "backgroundColor": "#b3cde8"
-            }
-        },
-        "useIcon": true,
-        "iconStyle": {
-            "cursor": "pointer"
-        },
-        "input_schema": {
-            "title": "InputModel",
-            "description": "Upload photo from mounted volume to S3 folder",
-            "type": "object",
-            "properties": {
-                "s3_bucket_name": {
-                    "title": "S3 Bucket Name",
-                    "description": "Name of the bucket",
-                    "default": "bucket-name",
-                    "type": "string"
-                },
-                "s3_folder_name": {
-                    "title": "S3 Folder Name",
-                    "description": "Folder path within the bucket",
-                    "default": "edited",
-                    "type": "string"
-                },
-                "input_file_path": {
-                    "title": "Input File Path",
-                    "description": "The file path to be uploaded",
-                    "type": "string"
-                }
-            },
-            "required": [
-                "input_file_path"
-            ]
-        },
-        "output_schema": {
-            "title": "OutputModel",
-            "description": "Upload photo from mounted volume to S3 folder",
-            "type": "object",
-            "properties": {
-                "message": {
-                    "title": "Message",
-                    "description": "Output message to log",
-                    "default": "",
-                    "type": "string"
-                },
-                "file_url": {
-                    "title": "File Url",
-                    "description": "Url for the uploaded file",
-                    "type": "string"
-                }
-            },
-            "required": [
-                "file_url"
-            ]
-        }
-    },
     "ApplyCV2FilterOperator": {
         "name": "ApplyCV2FilterOperator",
-        "version": "0.1.0",
         "dependency": {
             "docker_image": null,
             "dockerfile": "Dockerfile_0",
             "requirements_file": null
         },
-        "operator_type": "default",
         "tags": [
             "Example"
         ],
         "style": {
             "node_label": "Apply filter",
-            "icon_class_name": "fas fa-database",
+            "node_type": "default",
             "node_style": {
                 "backgroundColor": "#b3cde8"
+            },
+            "useIcon": true,
+            "icon_class_name": "fas fa-database",
+            "iconStyle": {
+                "cursor": "pointer"
             }
-        },
-        "useIcon": true,
-        "iconStyle": {
-            "cursor": "pointer"
         },
         "input_schema": {
             "title": "InputModel",
@@ -234,103 +88,58 @@
             ]
         }
     },
-    "ExampleOperator": {
-        "name": "ExampleOperator",
-        "version": "0.1.0",
+    "DownloadFileFromGithubOperator": {
+        "name": "DownloadFileFromGithubOperator",
         "dependency": {
             "docker_image": null,
             "dockerfile": null,
             "requirements_file": "requirements_0.txt"
         },
-        "operator_type": "default",
         "tags": [
             "Example"
         ],
         "style": {
-            "node_label": "Example Operator",
-            "icon_class_name": "fas fa-database",
+            "node_label": "Download file from Github",
+            "node_type": "source",
             "node_style": {
                 "backgroundColor": "#b3cde8"
             },
-            "node_type": "default"
-        },
-        "useIcon": true,
-        "iconStyle": {
-            "cursor": "pointer"
+            "useIcon": true,
+            "icon_class_name": "fas fa-database",
+            "iconStyle": {
+                "cursor": "pointer"
+            }
         },
         "input_schema": {
             "title": "InputModel",
-            "description": "Example Operator",
+            "description": "Download random file from Github",
             "type": "object",
             "properties": {
-                "input_arg_1": {
-                    "title": "Input Arg 1",
-                    "description": "description",
-                    "default": "default",
-                    "type": "string"
-                }
-            }
-        },
-        "output_schema": {
-            "title": "OutputModel",
-            "description": "Example Operator",
-            "type": "object",
-            "properties": {
-                "message": {
-                    "title": "Message",
-                    "description": "Output message to log",
-                    "default": "",
+                "repository_name": {
+                    "title": "Repository Name",
+                    "description": "The name of the target repository",
                     "type": "string"
                 },
-                "output_arg_1": {
-                    "title": "Output Arg 1",
-                    "description": "description",
-                    "default": "default",
+                "branch": {
+                    "title": "Branch",
+                    "description": "The branch to be used",
+                    "default": "main",
+                    "type": "string"
+                },
+                "folder_path": {
+                    "title": "Folder Path",
+                    "description": "The folder path within the repository",
                     "type": "string"
                 }
-            }
-        }
-    },
-    "LoadPhotoFromS3Operator": {
-        "name": "LoadPhotoFromS3Operator",
-        "version": "0.1.0",
-        "dependency": {
-            "docker_image": null,
-            "dockerfile": null,
-            "requirements_file": "requirements_0.txt"
-        },
-        "operator_type": "default",
-        "tags": [
-            "Example"
-        ],
-        "style": {
-            "node_label": "Load photo from S3",
-            "icon_class_name": "fas fa-database",
-            "node_style": {
-                "backgroundColor": "#b3cde8"
             },
-            "node_type": "source"
-        },
-        "useIcon": true,
-        "iconStyle": {
-            "cursor": "pointer"
-        },
-        "input_schema": {
-            "title": "InputModel",
-            "description": "Get photo from S3 path",
-            "type": "object",
-            "properties": {
-                "bucket_name": {
-                    "title": "Bucket Name",
-                    "description": "this is the name of the bucket",
-                    "default": "bucket-name",
-                    "type": "string"
-                }
-            }
+            "required": [
+                "repository_name",
+                "folder_path"
+            ]
         },
         "output_schema": {
             "title": "OutputModel",
-            "description": "Get photo from S3 path",
+            "description": "Download random file from Github",
             "type": "object",
             "properties": {
                 "message": {
@@ -341,7 +150,7 @@
                 },
                 "output_file_path": {
                     "title": "Output File Path",
-                    "description": "Path to the downloaded file",
+                    "description": "The path to the downloaded file",
                     "type": "string"
                 }
             },
@@ -352,27 +161,25 @@
     },
     "DownloadPicsumImageOperator": {
         "name": "DownloadPicsumImageOperator",
-        "version": "0.1.0",
         "dependency": {
             "docker_image": null,
             "dockerfile": null,
             "requirements_file": "requirements_0.txt"
         },
-        "operator_type": "default",
         "tags": [
             "Example"
         ],
         "style": {
             "node_label": "Download Image",
-            "icon_class_name": "fa-solid fa-image",
+            "node_type": "source",
             "node_style": {
                 "backgroundColor": "#ebebeb"
             },
-            "node_type": "source"
-        },
-        "useIcon": true,
-        "iconStyle": {
-            "cursor": "pointer"
+            "useIcon": true,
+            "icon_class_name": "fa-solid fa-image",
+            "iconStyle": {
+                "cursor": "pointer"
+            }
         },
         "input_schema": {
             "title": "InputModel",
@@ -417,28 +224,82 @@
             ]
         }
     },
-    "GetColormindPaletteOperator": {
-        "name": "GetColormindPaletteOperator",
-        "version": "0.1.0",
+    "ExampleOperator": {
+        "name": "ExampleOperator",
         "dependency": {
             "docker_image": null,
             "dockerfile": null,
             "requirements_file": "requirements_0.txt"
         },
-        "operator_type": "default",
+        "tags": [
+            "Example"
+        ],
+        "style": {
+            "node_label": "Example Operator",
+            "node_type": "default",
+            "node_style": {
+                "backgroundColor": "#b3cde8"
+            },
+            "useIcon": true,
+            "icon_class_name": "fas fa-database",
+            "iconStyle": {
+                "cursor": "pointer"
+            }
+        },
+        "input_schema": {
+            "title": "InputModel",
+            "description": "Example Operator",
+            "type": "object",
+            "properties": {
+                "input_arg_1": {
+                    "title": "Input Arg 1",
+                    "description": "description",
+                    "default": "default",
+                    "type": "string"
+                }
+            }
+        },
+        "output_schema": {
+            "title": "OutputModel",
+            "description": "Example Operator",
+            "type": "object",
+            "properties": {
+                "message": {
+                    "title": "Message",
+                    "description": "Output message to log",
+                    "default": "",
+                    "type": "string"
+                },
+                "output_arg_1": {
+                    "title": "Output Arg 1",
+                    "description": "description",
+                    "default": "default",
+                    "type": "string"
+                }
+            }
+        }
+    },
+    "GetColormindPaletteOperator": {
+        "name": "GetColormindPaletteOperator",
+        "dependency": {
+            "docker_image": null,
+            "dockerfile": null,
+            "requirements_file": "requirements_0.txt"
+        },
         "tags": [
             "Example"
         ],
         "style": {
             "node_label": "Get Colormind pallete",
-            "icon_class_name": "fa-solid fa-palette",
+            "node_type": "default",
             "node_style": {
                 "backgroundColor": "#ebebeb"
+            },
+            "useIcon": true,
+            "icon_class_name": "fa-solid fa-palette",
+            "iconStyle": {
+                "cursor": "pointer"
             }
-        },
-        "useIcon": true,
-        "iconStyle": {
-            "cursor": "pointer"
         },
         "input_schema": {
             "title": "InputModel",
@@ -501,29 +362,84 @@
             ]
         }
     },
+    "LoadPhotoFromS3Operator": {
+        "name": "LoadPhotoFromS3Operator",
+        "dependency": {
+            "docker_image": null,
+            "dockerfile": null,
+            "requirements_file": "requirements_0.txt"
+        },
+        "tags": [
+            "Example"
+        ],
+        "style": {
+            "node_label": "Load photo from S3",
+            "node_type": "source",
+            "node_style": {
+                "backgroundColor": "#b3cde8"
+            },
+            "useIcon": true,
+            "icon_class_name": "fas fa-database",
+            "iconStyle": {
+                "cursor": "pointer"
+            }
+        },
+        "input_schema": {
+            "title": "InputModel",
+            "description": "Get photo from S3 path",
+            "type": "object",
+            "properties": {
+                "bucket_name": {
+                    "title": "Bucket Name",
+                    "description": "this is the name of the bucket",
+                    "default": "bucket-name",
+                    "type": "string"
+                }
+            }
+        },
+        "output_schema": {
+            "title": "OutputModel",
+            "description": "Get photo from S3 path",
+            "type": "object",
+            "properties": {
+                "message": {
+                    "title": "Message",
+                    "description": "Output message to log",
+                    "default": "",
+                    "type": "string"
+                },
+                "output_file_path": {
+                    "title": "Output File Path",
+                    "description": "Path to the downloaded file",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "output_file_path"
+            ]
+        }
+    },
     "PostInstagramOperator": {
         "name": "PostInstagramOperator",
-        "version": "0.1.0",
         "dependency": {
             "docker_image": null,
             "dockerfile": "Dockerfile_0",
             "requirements_file": null
         },
-        "operator_type": "default",
         "tags": [
             "Example"
         ],
         "style": {
             "node_label": "Post on Instagram",
-            "icon_class_name": "fas fa-database",
+            "node_type": "sink",
             "node_style": {
                 "backgroundColor": "#b3cde8"
             },
-            "node_type": "sink"
-        },
-        "useIcon": true,
-        "iconStyle": {
-            "cursor": "pointer"
+            "useIcon": true,
+            "icon_class_name": "fas fa-database",
+            "iconStyle": {
+                "cursor": "pointer"
+            }
         },
         "input_schema": {
             "title": "InputModel",
@@ -554,28 +470,82 @@
             }
         }
     },
-    "UploadFileToGithubOperator": {
-        "name": "UploadFileToGithubOperator",
-        "version": "0.1.0",
+    "ReportGeneratorOperator": {
+        "name": "ReportGeneratorOperator",
         "dependency": {
             "docker_image": null,
             "dockerfile": null,
             "requirements_file": "requirements_0.txt"
         },
-        "operator_type": "default",
+        "tags": [
+            "Example"
+        ],
+        "style": {
+            "node_label": "Generate Report",
+            "node_type": "sink",
+            "node_style": {
+                "backgroundColor": "#ebebeb"
+            },
+            "useIcon": true,
+            "icon_class_name": "fa-solid fa-file-invoice",
+            "iconStyle": {
+                "cursor": "pointer"
+            }
+        },
+        "input_schema": {
+            "title": "ReportGeneratorOperator",
+            "description": "Generate report and save as PDF.",
+            "type": "object",
+            "properties": {
+                "arg_1": {
+                    "title": "Arg 1",
+                    "description": "this is an argument",
+                    "default": "default_value",
+                    "type": "string"
+                },
+                "arg_2": {
+                    "title": "Arg 2",
+                    "description": "this is another argument",
+                    "default": "value",
+                    "type": "string"
+                }
+            }
+        },
+        "output_schema": {
+            "title": "OutputModel",
+            "description": "Generate report and save as PDF.",
+            "type": "object",
+            "properties": {
+                "message": {
+                    "title": "Message",
+                    "description": "Output message to log",
+                    "default": "Report generated successfully!",
+                    "type": "string"
+                }
+            }
+        }
+    },
+    "UploadFileToGithubOperator": {
+        "name": "UploadFileToGithubOperator",
+        "dependency": {
+            "docker_image": null,
+            "dockerfile": null,
+            "requirements_file": "requirements_0.txt"
+        },
         "tags": [
             "Example"
         ],
         "style": {
             "node_label": "Upload file to Github",
-            "icon_class_name": "fa-solid fa-circle",
+            "node_type": "default",
             "node_style": {
                 "backgroundColor": "#b3cde8"
+            },
+            "useIcon": true,
+            "icon_class_name": "fa-solid fa-circle",
+            "iconStyle": {
+                "cursor": "pointer"
             }
-        },
-        "useIcon": true,
-        "iconStyle": {
-            "cursor": "pointer"
         },
         "input_schema": {
             "title": "InputModel",
@@ -626,61 +596,75 @@
             ]
         }
     },
-    "ReportGeneratorOperator": {
-        "name": "ReportGeneratorOperator",
-        "version": "0.1.0",
+    "UploadPhotoToS3Operator": {
+        "name": "UploadPhotoToS3Operator",
         "dependency": {
             "docker_image": null,
             "dockerfile": null,
             "requirements_file": "requirements_0.txt"
         },
-        "operator_type": "default",
         "tags": [
             "Example"
         ],
         "style": {
-            "node_label": "Generate Report",
-            "icon_class_name": "fa-solid fa-file-invoice",
+            "node_label": "Upload photo to S3",
+            "node_type": "default",
             "node_style": {
-                "backgroundColor": "#ebebeb"
+                "backgroundColor": "#b3cde8"
             },
-            "node_type": "sink"
-        },
-        "useIcon": true,
-        "iconStyle": {
-            "cursor": "pointer"
+            "useIcon": true,
+            "icon_class_name": "fa-solid fa-circle",
+            "iconStyle": {
+                "cursor": "pointer"
+            }
         },
         "input_schema": {
-            "title": "ReportGeneratorOperator",
-            "description": "Generate report and save as PDF.",
+            "title": "InputModel",
+            "description": "Upload photo from mounted volume to S3 folder",
             "type": "object",
             "properties": {
-                "arg_1": {
-                    "title": "Arg 1",
-                    "description": "this is an argument",
-                    "default": "default_value",
+                "s3_bucket_name": {
+                    "title": "S3 Bucket Name",
+                    "description": "Name of the bucket",
+                    "default": "bucket-name",
                     "type": "string"
                 },
-                "arg_2": {
-                    "title": "Arg 2",
-                    "description": "this is another argument",
-                    "default": "value",
+                "s3_folder_name": {
+                    "title": "S3 Folder Name",
+                    "description": "Folder path within the bucket",
+                    "default": "edited",
+                    "type": "string"
+                },
+                "input_file_path": {
+                    "title": "Input File Path",
+                    "description": "The file path to be uploaded",
                     "type": "string"
                 }
-            }
+            },
+            "required": [
+                "input_file_path"
+            ]
         },
         "output_schema": {
             "title": "OutputModel",
-            "description": "Generate report and save as PDF.",
+            "description": "Upload photo from mounted volume to S3 folder",
             "type": "object",
             "properties": {
                 "message": {
                     "title": "Message",
                     "description": "Output message to log",
-                    "default": "Report generated successfully!",
+                    "default": "",
+                    "type": "string"
+                },
+                "file_url": {
+                    "title": "File Url",
+                    "description": "Url for the uploaded file",
                     "type": "string"
                 }
-            }
+            },
+            "required": [
+                "file_url"
+            ]
         }
     }
 }
