@@ -86,7 +86,8 @@
             "required": [
                 "output_file_path"
             ]
-        }
+        },
+        "secrets_schema": null
     },
     "DownloadFileFromGithubOperator": {
         "name": "DownloadFileFromGithubOperator",
@@ -157,6 +158,21 @@
             "required": [
                 "output_file_path"
             ]
+        },
+        "secrets_schema": {
+            "title": "SecretsModel",
+            "description": "Download random file from Github",
+            "type": "object",
+            "properties": {
+                "GITHUB_ACCESS_TOKEN": {
+                    "title": "Github Access Token",
+                    "description": "Github access token",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "GITHUB_ACCESS_TOKEN"
+            ]
         }
     },
     "DownloadPicsumImageOperator": {
@@ -222,7 +238,8 @@
             "required": [
                 "output_file_path"
             ]
-        }
+        },
+        "secrets_schema": null
     },
     "ExampleOperator": {
         "name": "ExampleOperator",
@@ -277,7 +294,8 @@
                     "type": "string"
                 }
             }
-        }
+        },
+        "secrets_schema": null
     },
     "GetColormindPaletteOperator": {
         "name": "GetColormindPaletteOperator",
@@ -360,7 +378,8 @@
             "required": [
                 "output_palette_path"
             ]
-        }
+        },
+        "secrets_schema": null
     },
     "LoadPhotoFromS3Operator": {
         "name": "LoadPhotoFromS3Operator",
@@ -417,7 +436,8 @@
             "required": [
                 "output_file_path"
             ]
-        }
+        },
+        "secrets_schema": null
     },
     "PostInstagramOperator": {
         "name": "PostInstagramOperator",
@@ -468,7 +488,8 @@
                     "type": "string"
                 }
             }
-        }
+        },
+        "secrets_schema": null
     },
     "ReportGeneratorOperator": {
         "name": "ReportGeneratorOperator",
@@ -523,7 +544,8 @@
                     "type": "string"
                 }
             }
-        }
+        },
+        "secrets_schema": null
     },
     "UploadFileToGithubOperator": {
         "name": "UploadFileToGithubOperator",
@@ -594,7 +616,8 @@
             "required": [
                 "file_url"
             ]
-        }
+        },
+        "secrets_schema": null
     },
     "UploadPhotoToS3Operator": {
         "name": "UploadPhotoToS3Operator",
@@ -665,6 +688,7 @@
             "required": [
                 "file_url"
             ]
-        }
+        },
+        "secrets_schema": null
     }
 }

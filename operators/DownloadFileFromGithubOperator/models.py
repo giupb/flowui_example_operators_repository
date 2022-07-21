@@ -30,3 +30,13 @@ class OutputModel(BaseModel):
     output_file_path: str = Field(
         description='The path to the downloaded file'
     )
+
+
+class SecretsModel(BaseModel):
+    """
+    Download random file from Github
+    """
+
+    GITHUB_ACCESS_TOKEN: str = Field(
+        description="Github access token"
+    )
