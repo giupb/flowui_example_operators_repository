@@ -33,8 +33,8 @@ jobs:
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add .flowui/*
-          git commit -m "auto-organize" -a
+          GIT_STATUS=$(git status -s)
+          [[ ! -z "$GIT_STATUS" ]] && git add .flowui/* && git commit -m "auto-organize" -a || echo "No changes to commit"
 
       - name: Push changes
         uses: ad-m/github-push-action@master
