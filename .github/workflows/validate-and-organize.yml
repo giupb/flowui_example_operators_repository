@@ -1,4 +1,4 @@
-name: Validate and Organize
+name: Validate and organize repo, build and publish Docker images
 
 on:
   push:
@@ -26,8 +26,11 @@ jobs:
           python -m pip install -U pip
           pip install flowui-project
 
-      - name: Run organize
-        run: flowui organize
+      - name: Run organize, build and publish images
+        env:
+          DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
+          DOCKERHUB_PASSWORD: ${{ secrets.DOCKERHUB_PASSWORD }}
+        run: flowui organize --build-images --publish-images
 
       - name: Commit files
         run: |
