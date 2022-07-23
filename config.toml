@@ -1,14 +1,17 @@
 [repository]
 REPOSITORY_NAME = "example-project"
 
+[dockerhub]
+REGISTRY_NAME = "taufferconsulting"
+
+# Should be in Github secrets or local host ENV:
+# DOCKERHUB_USERNAME
+# DOCKERHUB_PASSWORD
+
+
+
 # A list of secrets used by the Operators in this repository
 OPERATORS_SECRETS = [
-    "GITHUB_ACCESS_TOKEN"
+    "GITHUB_ACCESS_TOKEN",
+    "INSTAGRAM_TOKEN"
 ]
-
-# OLD VARS - TO BE REMOVED
-# FLOWUI_DEPLOY_MODE = "local-bash"
-# VOLUME_MOUNT_PATH_HOST = "/media/luiz/storage/Github/flowui_example_project/mnt/fs"
-# FLOWUI_PATH_HOST = "/media/luiz/storage/Github/flowui"
-# CODE_REPOSITORY_SOURCE = "local"
-# GITHUB_REPOSITORY_NAME = "Tauffer-Consulting/flowui_example_project"

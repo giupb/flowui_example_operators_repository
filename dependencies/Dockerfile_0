@@ -13,5 +13,5 @@ COPY requirements_0.txt .
 RUN pip install --user virtualenv \
     && virtualenv flowui_env --system-site-packages\
     && source flowui_env/bin/activate \
-    && /opt/airflow/flowui_env/bin/pip install --upgrade pip \
+    # && /opt/airflow/flowui_env/bin/pip install --upgrade pip \
     && pip install --no-cache-dir opencv-python scipy boto3 psycopg2-binary
