@@ -24,7 +24,7 @@ jobs:
       - name: Pip install packages
         run: |
           python -m pip install -U pip
-          pip install flowui-project
+          pip install --no-cache-dir flowui-project
 
       - name: Run organize, build and publish images
         env:
