@@ -2,30 +2,30 @@
     "flowui-dependency-0": {
         "dependency": {
             "docker_image": null,
-            "dockerfile": null,
-            "requirements_file": "requirements_0.txt"
-        },
-        "operators": [
-            "DownloadFileFromGithubOperator",
-            "UploadPhotoToS3Operator",
-            "ExampleOperator",
-            "LoadPhotoFromS3Operator",
-            "DownloadPicsumImageOperator",
-            "GetColormindPaletteOperator",
-            "UploadFileToGithubOperator",
-            "ReportGeneratorOperator"
-        ],
-        "source_image": "taufferconsulting/flowui-dependency-0"
-    },
-    "flowui-dependency-1": {
-        "dependency": {
-            "docker_image": null,
             "dockerfile": "Dockerfile_0",
             "requirements_file": null
         },
         "operators": [
             "ApplyCV2FilterOperator",
             "PostInstagramOperator"
+        ],
+        "source_image": "taufferconsulting/flowui-dependency-0"
+    },
+    "flowui-dependency-1": {
+        "dependency": {
+            "docker_image": null,
+            "dockerfile": null,
+            "requirements_file": "requirements_0.txt"
+        },
+        "operators": [
+            "DownloadFileFromGithubOperator",
+            "DownloadPicsumImageOperator",
+            "ExampleOperator",
+            "GetColormindPaletteOperator",
+            "LoadPhotoFromS3Operator",
+            "ReportGeneratorOperator",
+            "UploadFileToGithubOperator",
+            "UploadPhotoToS3Operator"
         ],
         "source_image": "taufferconsulting/flowui-dependency-1"
     }
