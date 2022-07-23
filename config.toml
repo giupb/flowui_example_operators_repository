@@ -3,15 +3,3 @@ REPOSITORY_NAME = "example-project"
 
 [dockerhub]
 REGISTRY_NAME = "taufferconsulting"
-
-# Should be in Github secrets or local host ENV:
-# DOCKERHUB_USERNAME
-# DOCKERHUB_PASSWORD
-
-
-
-# A list of secrets used by the Operators in this repository
-OPERATORS_SECRETS = [
-    "GITHUB_ACCESS_TOKEN",
-    "INSTAGRAM_TOKEN"
-]
