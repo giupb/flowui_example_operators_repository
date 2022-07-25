@@ -246,7 +246,7 @@
         "dependency": {
             "docker_image": null,
             "dockerfile": null,
-            "requirements_file": "requirements_0.txt"
+            "requirements_file": null
         },
         "tags": [
             "Example"
@@ -496,7 +496,7 @@
         "dependency": {
             "docker_image": null,
             "dockerfile": null,
-            "requirements_file": "requirements_0.txt"
+            "requirements_file": null
         },
         "tags": [
             "Example"

@@ -20,15 +20,25 @@
         "operators": [
             "DownloadFileFromGithubOperator",
             "DownloadPicsumImageOperator",
-            "ExampleOperator",
             "GetColormindPaletteOperator",
             "LoadPhotoFromS3Operator",
-            "ReportGeneratorOperator",
             "UploadFileToGithubOperator",
             "UploadPhotoToS3Operator"
         ],
         "secrets": [
             "GITHUB_ACCESS_TOKEN"
         ]
+    },
+    "example_project_flowui_dependency_2": {
+        "dependency": {
+            "docker_image": null,
+            "dockerfile": null,
+            "requirements_file": null
+        },
+        "operators": [
+            "ExampleOperator",
+            "ReportGeneratorOperator"
+        ],
+        "secrets": []
     }
 }
