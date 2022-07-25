@@ -32,15 +32,15 @@ jobs:
           DOCKERHUB_PASSWORD: ${{ secrets.DOCKERHUB_PASSWORD }}
         run: flowui organize --build-images --publish-images
 
-      # - name: Commit files
-      #   run: |
-      #     git config --local user.email "github-actions[bot]@users.noreply.github.com"
-      #     git config --local user.name "github-actions[bot]"
-      #     GIT_STATUS=$(git status -s)
-      #     [[ ! -z "$GIT_STATUS" ]] && git add .flowui/* && git commit -m "auto-organize" -a || echo "No changes to commit"
+      - name: Commit files
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          GIT_STATUS=$(git status -s)
+          [[ ! -z "$GIT_STATUS" ]] && git add .flowui/* && git commit -m "auto-organize" -a || echo "No changes to commit"
 
-      # - name: Push changes
-      #   uses: ad-m/github-push-action@master
-      #   with:
-      #     github_token: ${{ secrets.GITHUB_TOKEN }}
-      #     branch: ${{ github.ref }}
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref }}
