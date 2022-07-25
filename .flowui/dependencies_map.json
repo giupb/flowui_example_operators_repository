@@ -1,5 +1,5 @@
 {
-    "flowui-dependency-0": {
+    "example_project_flowui_dependency_0": {
         "dependency": {
             "docker_image": null,
             "dockerfile": "Dockerfile_0",
@@ -9,9 +9,9 @@
             "ApplyCV2FilterOperator",
             "PostInstagramOperator"
         ],
-        "source_image": "taufferconsulting/flowui-dependency-0"
+        "secrets": []
     },
-    "flowui-dependency-1": {
+    "example_project_flowui_dependency_1": {
         "dependency": {
             "docker_image": null,
             "dockerfile": null,
@@ -27,6 +27,8 @@
             "UploadFileToGithubOperator",
             "UploadPhotoToS3Operator"
         ],
-        "source_image": "taufferconsulting/flowui-dependency-1"
+        "secrets": [
+            "GITHUB_ACCESS_TOKEN"
+        ]
     }
 }
