@@ -1,5 +1,5 @@
 [repository]
-REPOSITORY_NAME = "example-project"
+REPOSITORY_NAME = "example_project"
 
 [dockerhub]
 REGISTRY_NAME = "taufferconsulting"
