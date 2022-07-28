@@ -9,9 +9,7 @@ RUN apt-get install nano -y
 RUN apt-get install ffmpeg libsm6 libxext6  -y
 
 USER airflow
-COPY requirements_0.txt .
 RUN pip install --user virtualenv \
     && virtualenv flowui_env --system-site-packages\
     && source flowui_env/bin/activate \
-    # && /opt/airflow/flowui_env/bin/pip install --upgrade pip \
     && pip install --no-cache-dir opencv-python scipy boto3

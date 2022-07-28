@@ -9,7 +9,8 @@
             "ApplyCV2FilterOperator",
             "PostInstagramOperator"
         ],
-        "secrets": []
+        "secrets": [],
+        "source_image": "taufferconsulting/example_project_flowui_dependency_0"
     },
     "example_project_flowui_dependency_1": {
         "dependency": {
@@ -27,7 +28,8 @@
         ],
         "secrets": [
             "GITHUB_ACCESS_TOKEN"
-        ]
+        ],
+        "source_image": "taufferconsulting/example_project_flowui_dependency_1"
     },
     "example_project_flowui_dependency_2": {
         "dependency": {
@@ -39,6 +41,7 @@
             "ExampleOperator",
             "ReportGeneratorOperator"
         ],
-        "secrets": []
+        "secrets": [],
+        "source_image": "taufferconsulting/flowui-airflow-worker-base"
     }
 }
