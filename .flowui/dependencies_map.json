@@ -20,11 +20,11 @@
         },
         "operators": [
             "DownloadFileFromGithubOperator",
+            "UploadPhotoToS3Operator",
+            "LoadPhotoFromS3Operator",
             "DownloadPicsumImageOperator",
             "GetColormindPaletteOperator",
-            "LoadPhotoFromS3Operator",
-            "UploadFileToGithubOperator",
-            "UploadPhotoToS3Operator"
+            "UploadFileToGithubOperator"
         ],
         "secrets": [
             "GITHUB_ACCESS_TOKEN"
