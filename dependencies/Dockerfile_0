@@ -9,6 +9,9 @@ RUN apt-get install nano -y
 RUN apt-get install ffmpeg libsm6 libxext6  -y
 
 USER airflow
+COPY config.toml flowui/operators_repository/
+COPY operators flowui/operators_repository/operators
+COPY .flowui flowui/operators_repository/.flowui
 RUN pip install --user virtualenv \
     && virtualenv flowui_env --system-site-packages\
     && source flowui_env/bin/activate \
