@@ -1,0 +1,23 @@
+FROM custom/custom-image
+
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONUNBUFFERED=1
+
+# Here you can install any systems level dependencies, e.g.:
+USER root
+RUN apt-get update
+RUN apt-get install nano -y
+RUN apt-get install ffmpeg libsm6 libxext6  -y
+
+# Need to copy operators source code
+USER airflow
+COPY config.toml flowui/operators_repository/
+COPY operators flowui/operators_repository/operators
+COPY .flowui flowui/operators_repository/.flowui
+
+# Need to setup flowui_env virtual environment
+RUN pip install --user virtualenv \
+    && virtualenv flowui_env --system-site-packages\
+    && source flowui_env/bin/activate \
+    # Here you can install any pip dependencies, e.g.:
+    && pip install --no-cache-dir opencv-python scipy boto3
