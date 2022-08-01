@@ -401,6 +401,12 @@
                     "default": 200,
                     "exclusiveMinimum": 10,
                     "type": "integer"
+                },
+                "save_as_file": {
+                    "title": "Save As File",
+                    "description": "Save result as file. If false, return image data in XCOM",
+                    "default": false,
+                    "type": "boolean"
                 }
             }
         },
@@ -419,11 +425,13 @@
                     "title": "Output File Path",
                     "description": "The path to the downloaded file",
                     "type": "string"
+                },
+                "image_data": {
+                    "title": "Image Data",
+                    "description": "Downloaded image data",
+                    "type": "string"
                 }
-            },
-            "required": [
-                "output_file_path"
-            ]
+            }
         },
         "secrets_schema": null
     },
