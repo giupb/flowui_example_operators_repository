@@ -467,19 +467,27 @@
                     "description": "Path to the input file.",
                     "type": "string"
                 },
+                "input_image_data": {
+                    "title": "Input Image Data",
+                    "description": "Input image data.",
+                    "type": "string"
+                },
                 "model": {
-                    "description": "Model to generate color palette",
+                    "description": "Model to generate color palette.",
                     "default": "default",
                     "allOf": [
                         {
                             "$ref": "#/definitions/PaletteModelType"
                         }
                     ]
+                },
+                "save_as_file": {
+                    "title": "Save As File",
+                    "description": "Save result as file. If false, return palette data in XCOM",
+                    "default": false,
+                    "type": "boolean"
                 }
             },
-            "required": [
-                "input_file_path"
-            ],
             "definitions": {
                 "PaletteModelType": {
                     "title": "PaletteModelType",
@@ -503,19 +511,21 @@
             "properties": {
                 "message": {
                     "title": "Message",
-                    "description": "Output message to log",
+                    "description": "Output message to log.",
                     "default": "",
                     "type": "string"
                 },
-                "output_palette_path": {
-                    "title": "Output Palette Path",
-                    "description": "Path to the generated palette file",
+                "output_palette_file_path": {
+                    "title": "Output Palette File Path",
+                    "description": "Path to the generated palette file.",
+                    "type": "string"
+                },
+                "output_palette_data": {
+                    "title": "Output Palette Data",
+                    "description": "Generated palette data.",
                     "type": "string"
                 }
-            },
-            "required": [
-                "output_palette_path"
-            ]
+            }
         },
         "secrets_schema": null
     },
