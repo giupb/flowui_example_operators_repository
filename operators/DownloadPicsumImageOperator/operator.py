@@ -12,21 +12,23 @@ class DownloadPicsumImageOperator(BaseOperator):
     def operator_function(self, input_model: InputModel):
         # Request random image
         response = requests.get(f'https://picsum.photos/{input_model.width_pixels}/{input_model.height_pixels}')
-        img = Image.open(BytesIO(response.content))
 
-        image_path = str(Path(self.results_path) / "image.jpeg")
-        img.save(fp=image_path)
-        self.logger.info("Image downloaded")
+        if input_model.save_as_file:
+            img = Image.open(BytesIO(response.content))
+            image_path = str(Path(self.results_path) / "image.jpeg")
+            img.save(fp=image_path)
+            self.logger.info("Image downloaded")
+            message = f"Image successfully downloaded and saved to: {image_path}"
+            output_file_path = image_path
+            image_data = None
+        else:
+            message = "Image successfully downloaded and sent through XCOM."
+            output_file_path = None
+            image_data = str(response.content)
 
-        ########## Push results - accessible through XComs ##########
-        xcom_obj = {
-            "message": f"Image successfully downloaded to: {image_path}",
-            "other_custom_info": dict(
-                image_path=str(image_path)
-            )
-        }
         return OutputModel(
-            message="Image successfully downloaded!",
-            output_file_path=image_path
+            message=message,
+            output_file_path=output_file_path,
+            image_data=image_data
         )
 
