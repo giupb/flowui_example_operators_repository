@@ -6,7 +6,6 @@ To be used by FlowUI, an Operators repository should be structured in the follow
 config.toml
 ```
 
-
 # Operators
 The `/operators` folder should contain your customized Operators. Each Operator should follow a standard organization and contain certain information to be able to be found and used by your deployed FlowUI instance. Example:
 ```
