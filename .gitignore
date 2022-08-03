@@ -134,3 +134,4 @@ dmypy.json
 
 # Docker ignore
 docker-compose.yaml
+Dockerfile-tmp
