@@ -9,15 +9,18 @@ RUN apt-get update
 RUN apt-get install nano -y
 RUN apt-get install ffmpeg libsm6 libxext6  -y
 
-# Need to copy operators source code
 USER airflow
+
+# Need to create basic directories for FlowUI operations
+RUN mkdir -p flowui/operators_repository
+RUN mkdir -p flowui/xcom
+RUN mkdir -p flowui/run_data
+
+# Need to copy operators source code
 COPY config.toml flowui/operators_repository/
 COPY operators flowui/operators_repository/operators
 COPY .flowui flowui/operators_repository/.flowui
 
-# Need to setup flowui_env virtual environment
-RUN pip install --user virtualenv \
-    && virtualenv flowui_env --system-site-packages\
-    && source flowui_env/bin/activate \
-    # Here you can install any pip dependencies, e.g.:
+# Install specific dependencies in flowui_env virtual environment
+RUN source flowui_env/bin/activate \
     && pip install --no-cache-dir opencv-python scipy boto3
