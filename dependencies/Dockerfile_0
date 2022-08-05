@@ -1,10 +1,7 @@
-FROM taufferconsulting/flowui-airflow-worker-base
+FROM taufferconsulting/flowui-airflow-pod:0.0.1
 
-USER root
 RUN apt-get update
 RUN apt-get install ffmpeg libsm6 libxext6  -y
-
-USER airflow
 
 # Need to copy operators source code
 COPY config.toml flowui/operators_repository/
@@ -12,5 +9,4 @@ COPY operators flowui/operators_repository/operators
 COPY .flowui flowui/operators_repository/.flowui
 
 # Install specific dependencies in flowui_env virtual environment
-RUN source flowui_env/bin/activate \
-    && pip install --no-cache-dir opencv-python scipy boto3
+RUN pip install --no-cache-dir opencv-python scipy boto3
