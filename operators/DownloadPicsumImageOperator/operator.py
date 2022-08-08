@@ -5,6 +5,7 @@ import requests
 from pathlib import Path
 from io import BytesIO
 from PIL import Image
+import base64
 
 
 class DownloadPicsumImageOperator(BaseOperator):
@@ -24,7 +25,10 @@ class DownloadPicsumImageOperator(BaseOperator):
         else:
             message = "Image successfully downloaded and sent through XCOM."
             output_file_path = None
-            image_data = str(response.content)
+            image_data = base64.b64encode(response.content).decode()
+        
+        print("test")
+        print("HOT RLOAD")
 
         return OutputModel(
             message=message,

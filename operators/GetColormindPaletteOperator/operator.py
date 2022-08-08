@@ -7,6 +7,7 @@ from io import BytesIO
 from PIL import Image
 import numpy as np
 import json
+import base64
 
 
 class GetColormindPaletteOperator(BaseOperator):
@@ -17,7 +18,7 @@ class GetColormindPaletteOperator(BaseOperator):
             img_path = str(Path(input_model.input_file_path).resolve())
             img = Image.open(img_path)
         elif input_model.input_image_data:
-            img = Image.open(BytesIO(input_model.input_image_data))
+            img = Image.open(BytesIO(base64.b64decode(input_model.input_image_data)))
         img_array = np.array(img)
         img_reshaped = str(img_array.reshape((40000, 3)).tolist())
 
