@@ -2,6 +2,25 @@
     "example_project_flowui_dependency_0": {
         "dependency": {
             "docker_image": null,
+            "dockerfile": null,
+            "requirements_file": "requirements_0.txt"
+        },
+        "operators": [
+            "DownloadFileFromGithubOperator",
+            "UploadPhotoToS3Operator",
+            "LoadPhotoFromS3Operator",
+            "DownloadPicsumImageOperator",
+            "GetColormindPaletteOperator",
+            "UploadFileToGithubOperator"
+        ],
+        "secrets": [
+            "GITHUB_ACCESS_TOKEN"
+        ],
+        "source_image": "taufferconsulting/example_project_flowui_dependency_0"
+    },
+    "example_project_flowui_dependency_1": {
+        "dependency": {
+            "docker_image": null,
             "dockerfile": "Dockerfile_0",
             "requirements_file": null
         },
@@ -10,26 +29,7 @@
             "PostInstagramOperator"
         ],
         "secrets": [],
-        "source_image": "local/example_project_flowui_dependency_0:0.1.0"
-    },
-    "example_project_flowui_dependency_1": {
-        "dependency": {
-            "docker_image": null,
-            "dockerfile": null,
-            "requirements_file": "requirements_0.txt"
-        },
-        "operators": [
-            "DownloadFileFromGithubOperator",
-            "DownloadPicsumImageOperator",
-            "GetColormindPaletteOperator",
-            "LoadPhotoFromS3Operator",
-            "UploadFileToGithubOperator",
-            "UploadPhotoToS3Operator"
-        ],
-        "secrets": [
-            "GITHUB_ACCESS_TOKEN"
-        ],
-        "source_image": "local/example_project_flowui_dependency_1:0.1.0"
+        "source_image": "taufferconsulting/example_project_flowui_dependency_1"
     },
     "example_project_flowui_dependency_2": {
         "dependency": {
@@ -42,6 +42,6 @@
             "ReportGeneratorOperator"
         ],
         "secrets": [],
-        "source_image": "local/example_project_flowui_dependency_2:0.1.0"
+        "source_image": "taufferconsulting/example_project_flowui_dependency_2"
     }
 }
