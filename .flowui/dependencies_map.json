@@ -9,8 +9,6 @@
             "DownloadFileFromGithubOperator",
             "UploadPhotoToS3Operator",
             "LoadPhotoFromS3Operator",
-            "DownloadPicsumImageOperator",
-            "GetColormindPaletteOperator",
             "UploadFileToGithubOperator"
         ],
         "secrets": [
@@ -25,8 +23,7 @@
             "requirements_file": null
         },
         "operators": [
-            "ApplyCV2FilterOperator",
-            "PostInstagramOperator"
+            "ApplyCV2FilterOperator"
         ],
         "secrets": [],
         "source_image": "taufferconsulting/example_project_flowui_dependency_1:0.1.0"
