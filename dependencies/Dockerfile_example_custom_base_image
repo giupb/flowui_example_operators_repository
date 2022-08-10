@@ -21,6 +21,5 @@ COPY config.toml flowui/operators_repository/
 COPY operators flowui/operators_repository/operators
 COPY .flowui flowui/operators_repository/.flowui
 
-# Install specific dependencies in flowui_env virtual environment
-RUN source flowui_env/bin/activate \
-    && pip install --no-cache-dir opencv-python scipy boto3
+# Install specific python dependencies
+RUN pip install --no-cache-dir opencv-python scipy boto3
