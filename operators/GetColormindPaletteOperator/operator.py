@@ -45,7 +45,7 @@ class GetColormindPaletteOperator(BaseOperator):
 
         return OutputModel(
             message=message,
-            output_palette_file_path=output_palette_file_path,
+            output_palette_file_path=str(output_palette_file_path),
             output_palette_data=output_palette_data
         )
 
