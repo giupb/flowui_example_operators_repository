@@ -1,6 +1,6 @@
 [repository]
 REPOSITORY_NAME = "example_project"
-VERSION = "0.1.0"
+VERSION = "0.2.0"
 
 [dockerhub]
 REGISTRY_NAME = "taufferconsulting"
