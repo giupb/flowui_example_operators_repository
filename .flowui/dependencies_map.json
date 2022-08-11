@@ -14,7 +14,7 @@
         "secrets": [
             "GITHUB_ACCESS_TOKEN"
         ],
-        "source_image": "taufferconsulting/example_project_flowui_dependency_0:0.1.0"
+        "source_image": "taufferconsulting/example_project_flowui_dependency_0:0.2.0"
     },
     "example_project_flowui_dependency_1": {
         "dependency": {
@@ -27,6 +27,6 @@
             "ReportGeneratorOperator"
         ],
         "secrets": [],
-        "source_image": "taufferconsulting/example_project_flowui_dependency_1:0.1.0"
+        "source_image": "taufferconsulting/example_project_flowui_dependency_1:0.2.0"
     }
 }
