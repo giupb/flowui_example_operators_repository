@@ -143,19 +143,19 @@
         },
         "secrets_schema": null
     },
-    "LoadPhotoFromS3Operator": {
-        "name": "LoadPhotoFromS3Operator",
+    "ApplyCV2FilterOperator": {
+        "name": "ApplyCV2FilterOperator",
         "dependency": {
             "docker_image": null,
-            "dockerfile": null,
-            "requirements_file": "requirements_0.txt"
+            "dockerfile": "Dockerfile_0",
+            "requirements_file": null
         },
         "tags": [
             "Example"
         ],
         "style": {
-            "node_label": "Load photo from S3",
-            "node_type": "source",
+            "node_label": "Apply filter",
+            "node_type": "default",
             "node_style": {
                 "backgroundColor": "#b3cde8"
             },
@@ -165,23 +165,54 @@
                 "cursor": "pointer"
             }
         },
-        "description": "some description",
         "input_schema": {
             "title": "InputModel",
-            "description": "Get photo from S3 path",
+            "description": "Apply effect to image",
             "type": "object",
             "properties": {
-                "bucket_name": {
-                    "title": "Bucket Name",
-                    "description": "this is the name of the bucket",
-                    "default": "bucket-name",
+                "input_file_path": {
+                    "title": "Input File Path",
+                    "description": "Path to the input file",
+                    "type": "string"
+                },
+                "effect": {
+                    "description": "Effect to be applied",
+                    "default": "random",
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/EffectType"
+                        }
+                    ]
+                }
+            },
+            "required": [
+                "input_file_path"
+            ],
+            "definitions": {
+                "EffectType": {
+                    "title": "EffectType",
+                    "description": "An enumeration.",
+                    "enum": [
+                        "random",
+                        "grayscale",
+                        "bright",
+                        "dark",
+                        "sharp",
+                        "sepia",
+                        "pencil",
+                        "pencil_color",
+                        "hdr",
+                        "invert",
+                        "summer",
+                        "winter"
+                    ],
                     "type": "string"
                 }
             }
         },
         "output_schema": {
             "title": "OutputModel",
-            "description": "Get photo from S3 path",
+            "description": "Apply effect to image",
             "type": "object",
             "properties": {
                 "message": {
@@ -192,7 +223,7 @@
                 },
                 "output_file_path": {
                     "title": "Output File Path",
-                    "description": "Path to the downloaded file",
+                    "description": "Path to the output file",
                     "type": "string"
                 }
             },
@@ -202,8 +233,8 @@
         },
         "secrets_schema": null
     },
-    "ReportGeneratorOperator": {
-        "name": "ReportGeneratorOperator",
+    "ExampleOperator": {
+        "name": "ExampleOperator",
         "dependency": {
             "docker_image": null,
             "dockerfile": null,
