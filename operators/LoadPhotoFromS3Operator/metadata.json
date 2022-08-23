@@ -1,5 +1,6 @@
 {
     "name": "LoadPhotoFromS3Operator",
+    "description": "some description",
     "dependency": {
         "requirements_file": "requirements_0.txt"
     },

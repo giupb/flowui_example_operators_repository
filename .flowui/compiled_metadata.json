@@ -21,6 +21,7 @@
                 "cursor": "pointer"
             }
         },
+        "description": "some description",
         "input_schema": {
             "title": "InputModel",
             "description": "Download random file from Github",
@@ -85,168 +86,6 @@
             ]
         }
     },
-    "UploadPhotoToS3Operator": {
-        "name": "UploadPhotoToS3Operator",
-        "dependency": {
-            "docker_image": null,
-            "dockerfile": null,
-            "requirements_file": "requirements_0.txt"
-        },
-        "tags": [
-            "Example"
-        ],
-        "style": {
-            "node_label": "Upload photo to S3",
-            "node_type": "default",
-            "node_style": {
-                "backgroundColor": "#b3cde8"
-            },
-            "useIcon": true,
-            "icon_class_name": "fa-solid fa-circle",
-            "iconStyle": {
-                "cursor": "pointer"
-            }
-        },
-        "input_schema": {
-            "title": "InputModel",
-            "description": "Upload photo from mounted volume to S3 folder",
-            "type": "object",
-            "properties": {
-                "s3_bucket_name": {
-                    "title": "S3 Bucket Name",
-                    "description": "Name of the bucket",
-                    "default": "bucket-name",
-                    "type": "string"
-                },
-                "s3_folder_name": {
-                    "title": "S3 Folder Name",
-                    "description": "Folder path within the bucket",
-                    "default": "edited",
-                    "type": "string"
-                },
-                "input_file_path": {
-                    "title": "Input File Path",
-                    "description": "The file path to be uploaded",
-                    "type": "string"
-                }
-            },
-            "required": [
-                "input_file_path"
-            ]
-        },
-        "output_schema": {
-            "title": "OutputModel",
-            "description": "Upload photo from mounted volume to S3 folder",
-            "type": "object",
-            "properties": {
-                "message": {
-                    "title": "Message",
-                    "description": "Output message to log",
-                    "default": "",
-                    "type": "string"
-                },
-                "file_url": {
-                    "title": "File Url",
-                    "description": "Url for the uploaded file",
-                    "type": "string"
-                }
-            },
-            "required": [
-                "file_url"
-            ]
-        },
-        "secrets_schema": null
-    },
-    "ApplyCV2FilterOperator": {
-        "name": "ApplyCV2FilterOperator",
-        "dependency": {
-            "docker_image": null,
-            "dockerfile": "Dockerfile_0",
-            "requirements_file": null
-        },
-        "tags": [
-            "Example"
-        ],
-        "style": {
-            "node_label": "Apply filter",
-            "node_type": "default",
-            "node_style": {
-                "backgroundColor": "#b3cde8"
-            },
-            "useIcon": true,
-            "icon_class_name": "fas fa-database",
-            "iconStyle": {
-                "cursor": "pointer"
-            }
-        },
-        "input_schema": {
-            "title": "InputModel",
-            "description": "Apply effect to image",
-            "type": "object",
-            "properties": {
-                "input_file_path": {
-                    "title": "Input File Path",
-                    "description": "Path to the input file",
-                    "type": "string"
-                },
-                "effect": {
-                    "description": "Effect to be applied",
-                    "default": "random",
-                    "allOf": [
-                        {
-                            "$ref": "#/definitions/EffectType"
-                        }
-                    ]
-                }
-            },
-            "required": [
-                "input_file_path"
-            ],
-            "definitions": {
-                "EffectType": {
-                    "title": "EffectType",
-                    "description": "An enumeration.",
-                    "enum": [
-                        "random",
-                        "grayscale",
-                        "bright",
-                        "dark",
-                        "sharp",
-                        "sepia",
-                        "pencil",
-                        "pencil_color",
-                        "hdr",
-                        "invert",
-                        "summer",
-                        "winter"
-                    ],
-                    "type": "string"
-                }
-            }
-        },
-        "output_schema": {
-            "title": "OutputModel",
-            "description": "Apply effect to image",
-            "type": "object",
-            "properties": {
-                "message": {
-                    "title": "Message",
-                    "description": "Output message to log",
-                    "default": "",
-                    "type": "string"
-                },
-                "output_file_path": {
-                    "title": "Output File Path",
-                    "description": "Path to the output file",
-                    "type": "string"
-                }
-            },
-            "required": [
-                "output_file_path"
-            ]
-        },
-        "secrets_schema": null
-    },
     "ExampleOperator": {
         "name": "ExampleOperator",
         "dependency": {
@@ -269,6 +108,7 @@
                 "cursor": "pointer"
             }
         },
+        "description": "some description",
         "input_schema": {
             "title": "InputModel",
             "description": "Example Operator",
@@ -325,6 +165,7 @@
                 "cursor": "pointer"
             }
         },
+        "description": "some description",
         "input_schema": {
             "title": "InputModel",
             "description": "Get photo from S3 path",
@@ -361,6 +202,63 @@
         },
         "secrets_schema": null
     },
+    "ReportGeneratorOperator": {
+        "name": "ReportGeneratorOperator",
+        "dependency": {
+            "docker_image": null,
+            "dockerfile": null,
+            "requirements_file": null
+        },
+        "tags": [
+            "Example"
+        ],
+        "style": {
+            "node_label": "Generate Report",
+            "node_type": "sink",
+            "node_style": {
+                "backgroundColor": "#ebebeb"
+            },
+            "useIcon": true,
+            "icon_class_name": "fa-solid fa-file-invoice",
+            "iconStyle": {
+                "cursor": "pointer"
+            }
+        },
+        "description": "some description",
+        "input_schema": {
+            "title": "ReportGeneratorOperator",
+            "description": "Generate report and save as PDF.",
+            "type": "object",
+            "properties": {
+                "arg_1": {
+                    "title": "Arg 1",
+                    "description": "this is an argument",
+                    "default": "default_value",
+                    "type": "string"
+                },
+                "arg_2": {
+                    "title": "Arg 2",
+                    "description": "this is another argument",
+                    "default": "value",
+                    "type": "string"
+                }
+            }
+        },
+        "output_schema": {
+            "title": "OutputModel",
+            "description": "Generate report and save as PDF.",
+            "type": "object",
+            "properties": {
+                "message": {
+                    "title": "Message",
+                    "description": "Output message to log",
+                    "default": "Report generated successfully!",
+                    "type": "string"
+                }
+            }
+        },
+        "secrets_schema": null
+    },
     "UploadFileToGithubOperator": {
         "name": "UploadFileToGithubOperator",
         "dependency": {
@@ -383,6 +281,7 @@
                 "cursor": "pointer"
             }
         },
+        "description": "some description",
         "input_schema": {
             "title": "InputModel",
             "description": "Upload file to Github",
@@ -433,59 +332,76 @@
         },
         "secrets_schema": null
     },
-    "ReportGeneratorOperator": {
-        "name": "ReportGeneratorOperator",
+    "UploadPhotoToS3Operator": {
+        "name": "UploadPhotoToS3Operator",
         "dependency": {
             "docker_image": null,
             "dockerfile": null,
-            "requirements_file": null
+            "requirements_file": "requirements_0.txt"
         },
         "tags": [
             "Example"
         ],
         "style": {
-            "node_label": "Generate Report",
-            "node_type": "sink",
+            "node_label": "Upload photo to S3",
+            "node_type": "default",
             "node_style": {
-                "backgroundColor": "#ebebeb"
+                "backgroundColor": "#b3cde8"
             },
             "useIcon": true,
-            "icon_class_name": "fa-solid fa-file-invoice",
+            "icon_class_name": "fa-solid fa-circle",
             "iconStyle": {
                 "cursor": "pointer"
             }
         },
+        "description": "some description",
         "input_schema": {
-            "title": "ReportGeneratorOperator",
-            "description": "Generate report and save as PDF.",
+            "title": "InputModel",
+            "description": "Upload photo from mounted volume to S3 folder",
             "type": "object",
             "properties": {
-                "arg_1": {
-                    "title": "Arg 1",
-                    "description": "this is an argument",
-                    "default": "default_value",
+                "s3_bucket_name": {
+                    "title": "S3 Bucket Name",
+                    "description": "Name of the bucket",
+                    "default": "bucket-name",
                     "type": "string"
                 },
-                "arg_2": {
-                    "title": "Arg 2",
-                    "description": "this is another argument",
-                    "default": "value",
+                "s3_folder_name": {
+                    "title": "S3 Folder Name",
+                    "description": "Folder path within the bucket",
+                    "default": "edited",
+                    "type": "string"
+                },
+                "input_file_path": {
+                    "title": "Input File Path",
+                    "description": "The file path to be uploaded",
                     "type": "string"
                 }
-            }
+            },
+            "required": [
+                "input_file_path"
+            ]
         },
         "output_schema": {
             "title": "OutputModel",
-            "description": "Generate report and save as PDF.",
+            "description": "Upload photo from mounted volume to S3 folder",
             "type": "object",
             "properties": {
                 "message": {
                     "title": "Message",
                     "description": "Output message to log",
-                    "default": "Report generated successfully!",
+                    "default": "",
+                    "type": "string"
+                },
+                "file_url": {
+                    "title": "File Url",
+                    "description": "Url for the uploaded file",
                     "type": "string"
                 }
-            }
+            },
+            "required": [
+                "file_url"
+            ]
         },
         "secrets_schema": null
     }

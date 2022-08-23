@@ -1,5 +1,6 @@
 {
     "name": "ExampleOperator",
+    "description": "some description",
     "tags": [
         "Example"
     ],
