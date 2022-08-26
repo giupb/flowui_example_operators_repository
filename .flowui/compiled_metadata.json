@@ -287,7 +287,21 @@
                 }
             }
         },
-        "secrets_schema": null
+        "secrets_schema": {
+            "title": "SecretsModel",
+            "description": "Example Operator Secrets",
+            "type": "object",
+            "properties": {
+                "EXAMPLE_VAR": {
+                    "title": "Example Var",
+                    "description": "Example secret var",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "EXAMPLE_VAR"
+            ]
+        }
     },
     "ReportGeneratorOperator": {
         "name": "ReportGeneratorOperator",
