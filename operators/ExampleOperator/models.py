@@ -24,3 +24,13 @@ class OutputModel(BaseModel):
         default='default',
         description='description'
     )
+
+
+class SecretsModel(BaseModel):
+    """
+    Example Operator Secrets
+    """
+
+    EXAMPLE_VAR: str = Field(
+        description="Example secret var"
+    )
