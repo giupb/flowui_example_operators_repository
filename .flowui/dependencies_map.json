@@ -28,8 +28,8 @@
             "ApiFetchExampleOperator"
         ],
         "secrets": [
-            "API_KEY",
-            "EXAMPLE_VAR"
+            "EXAMPLE_VAR",
+            "API_KEY"
         ],
         "source_image": "taufferconsulting/example_project_flowui_dependency_1:0.2.0"
     }
