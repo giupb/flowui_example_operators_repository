@@ -16,7 +16,7 @@ class ApiFetchExampleOperator(BaseOperator):
         url = "https://airbnb19.p.rapidapi.com/api/v1/searchPropertyByPlace"
         querystring = {"id":"ChIJN3P2zJlG0i0RACx9yvsLAwQ", "totalRecords":"20", "currency":"USD", "adults":"1"}
         headers = {
-            "X-RapidAPI-Key": self.secrets.get('API_KEY'),
+            "X-RapidAPI-Key": self.secrets.API_KEY,
             "X-RapidAPI-Host": "airbnb19.p.rapidapi.com"
         }
         response = requests.request("GET", url, headers=headers, params=querystring)
