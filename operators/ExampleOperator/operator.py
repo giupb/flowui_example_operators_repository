@@ -1,7 +1,5 @@
-from email import message
 from flowui.base_operator import BaseOperator
 from .models import InputModel, OutputModel
-import os
 
 
 class ExampleOperator(BaseOperator):
