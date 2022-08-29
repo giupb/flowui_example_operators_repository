@@ -4,7 +4,7 @@ from .models import InputModel, OutputModel
 import json
 
 
-class ExampleOperator(BaseOperator):
+class ApiFetchExampleOperator(BaseOperator):
 
     def operator_function(self, input_model: InputModel):
         # The BaseOperator class provides a set of convenience self variables ready to be used
