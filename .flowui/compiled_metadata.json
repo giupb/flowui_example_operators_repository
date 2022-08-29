@@ -418,5 +418,79 @@
             ]
         },
         "secrets_schema": null
+    },
+    "ApiFetchExampleOperator": {
+        "name": "ApiFetchExampleOperator",
+        "dependency": {
+            "docker_image": null,
+            "dockerfile": null,
+            "requirements_file": null
+        },
+        "tags": [
+            "Example"
+        ],
+        "style": {
+            "node_label": "Api Fetch Example Operator",
+            "node_type": "default",
+            "node_style": {
+                "backgroundColor": "#b3cde8"
+            },
+            "useIcon": true,
+            "icon_class_name": "fas fa-database",
+            "iconStyle": {
+                "cursor": "pointer"
+            }
+        },
+        "description": "some description",
+        "input_schema": {
+            "title": "InputModel",
+            "description": "Example Operator",
+            "type": "object",
+            "properties": {
+                "input_arg_1": {
+                    "title": "Input Arg 1",
+                    "description": "description",
+                    "default": "default",
+                    "type": "string"
+                }
+            }
+        },
+        "output_schema": {
+            "title": "OutputModel",
+            "description": "Example Operator",
+            "type": "object",
+            "properties": {
+                "data": {
+                    "title": "Data",
+                    "description": "Output list with airbnb data",
+                    "type": "array",
+                    "items": {}
+                },
+                "message": {
+                    "title": "Message",
+                    "description": "Message to log",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "data",
+                "message"
+            ]
+        },
+        "secrets_schema": {
+            "title": "SecretsModel",
+            "description": "Example Operator Secrets",
+            "type": "object",
+            "properties": {
+                "API_KEY": {
+                    "title": "Api Key",
+                    "description": "API key",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "API_KEY"
+            ]
+        }
     }
 }
