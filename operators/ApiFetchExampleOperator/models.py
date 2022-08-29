@@ -6,10 +6,20 @@ class InputModel(BaseModel):
     Example Operator
     """
 
-    input_arg_1: str = Field(
-        default='default',
-        description='description'
+    airbnb_location_id: str = Field(
+        default='ChIJN3P2zJlG0i0RACx9yvsLAwQ',
+        description='Airbnb location id to search'
     )
+    currency: str = Field(
+        default='USD',
+        description='Currency to use in price'
+    )
+    adults: int = Field(
+        default=1,
+        description='Number of adults'
+    )
+
+
 
 
 class OutputModel(BaseModel):
