@@ -6,7 +6,7 @@
     ],
     "style": {
         "node_label": "Generate Report",
-        "node_type": "sink",
+        "node_type": "output",
         "icon_class_name": "fa-solid fa-file-invoice"
     }
 }
