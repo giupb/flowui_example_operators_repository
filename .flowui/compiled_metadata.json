@@ -315,7 +315,7 @@
         ],
         "style": {
             "node_label": "Generate Report",
-            "node_type": "sink",
+            "node_type": "output",
             "node_style": {
                 "backgroundColor": "#ebebeb"
             },
