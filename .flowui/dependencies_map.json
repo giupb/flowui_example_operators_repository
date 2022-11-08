@@ -1,5 +1,5 @@
 {
-    "example_project_image_0": {
+    "example_project_flowui_dependency_0": {
         "dependency": {
             "docker_image": null,
             "dockerfile": null,
@@ -7,15 +7,16 @@
         },
         "operators": [
             "DownloadFileFromGithubOperator",
-            "LoadPhotoFromS3Operator",
             "UploadFileToGithubOperator",
-            "UploadPhotoToS3Operator"
+            "UploadPhotoToS3Operator",
+            "LoadPhotoFromS3Operator"
         ],
         "secrets": [
             "GITHUB_ACCESS_TOKEN"
-        ]
+        ],
+        "source_image": "taufferconsulting/example_project_flowui_dependency_0:0.2.0"
     },
-    "example_project_image_1": {
+    "example_project_flowui_dependency_1": {
         "dependency": {
             "docker_image": null,
             "dockerfile": null,
@@ -23,8 +24,13 @@
         },
         "operators": [
             "ExampleOperator",
-            "ReportGeneratorOperator"
+            "ReportGeneratorOperator",
+            "ApiFetchExampleOperator"
         ],
-        "secrets": []
+        "secrets": [
+            "API_KEY",
+            "EXAMPLE_VAR"
+        ],
+        "source_image": "taufferconsulting/example_project_flowui_dependency_1:0.2.0"
     }
 }

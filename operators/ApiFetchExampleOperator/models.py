@@ -16,14 +16,10 @@ class OutputModel(BaseModel):
     """
     Example Operator
     """
-    message: str = Field(
-        default="",
-        description="Output message to log"
+    data: list = Field(
+        description="Output list with airbnb data"
     )
-    output_arg_1: str = Field(
-        default='default',
-        description='description'
-    )
+    message: str = Field(description="Message to log")
 
 
 class SecretsModel(BaseModel):
@@ -31,6 +27,6 @@ class SecretsModel(BaseModel):
     Example Operator Secrets
     """
 
-    EXAMPLE_VAR: str = Field(
-        description="Example secret var"
+    API_KEY: str = Field(
+        description="API key"
     )

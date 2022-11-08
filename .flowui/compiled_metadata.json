@@ -86,179 +86,6 @@
             ]
         }
     },
-    "ExampleOperator": {
-        "name": "ExampleOperator",
-        "dependency": {
-            "docker_image": null,
-            "dockerfile": null,
-            "requirements_file": null
-        },
-        "tags": [
-            "Example"
-        ],
-        "style": {
-            "node_label": "Example Operator",
-            "node_type": "default",
-            "node_style": {
-                "backgroundColor": "#b3cde8"
-            },
-            "useIcon": true,
-            "icon_class_name": "fas fa-database",
-            "iconStyle": {
-                "cursor": "pointer"
-            }
-        },
-        "description": "some description",
-        "input_schema": {
-            "title": "InputModel",
-            "description": "Example Operator",
-            "type": "object",
-            "properties": {
-                "input_arg_1": {
-                    "title": "Input Arg 1",
-                    "description": "description",
-                    "default": "default",
-                    "type": "string"
-                }
-            }
-        },
-        "output_schema": {
-            "title": "OutputModel",
-            "description": "Example Operator",
-            "type": "object",
-            "properties": {
-                "message": {
-                    "title": "Message",
-                    "description": "Output message to log",
-                    "default": "",
-                    "type": "string"
-                },
-                "output_arg_1": {
-                    "title": "Output Arg 1",
-                    "description": "description",
-                    "default": "default",
-                    "type": "string"
-                }
-            }
-        },
-        "secrets_schema": null
-    },
-    "LoadPhotoFromS3Operator": {
-        "name": "LoadPhotoFromS3Operator",
-        "dependency": {
-            "docker_image": null,
-            "dockerfile": null,
-            "requirements_file": "requirements_0.txt"
-        },
-        "tags": [
-            "Example"
-        ],
-        "style": {
-            "node_label": "Load photo from S3",
-            "node_type": "source",
-            "node_style": {
-                "backgroundColor": "#b3cde8"
-            },
-            "useIcon": true,
-            "icon_class_name": "fas fa-database",
-            "iconStyle": {
-                "cursor": "pointer"
-            }
-        },
-        "description": "some description",
-        "input_schema": {
-            "title": "InputModel",
-            "description": "Get photo from S3 path",
-            "type": "object",
-            "properties": {
-                "bucket_name": {
-                    "title": "Bucket Name",
-                    "description": "this is the name of the bucket",
-                    "default": "bucket-name",
-                    "type": "string"
-                }
-            }
-        },
-        "output_schema": {
-            "title": "OutputModel",
-            "description": "Get photo from S3 path",
-            "type": "object",
-            "properties": {
-                "message": {
-                    "title": "Message",
-                    "description": "Output message to log",
-                    "default": "",
-                    "type": "string"
-                },
-                "output_file_path": {
-                    "title": "Output File Path",
-                    "description": "Path to the downloaded file",
-                    "type": "string"
-                }
-            },
-            "required": [
-                "output_file_path"
-            ]
-        },
-        "secrets_schema": null
-    },
-    "ReportGeneratorOperator": {
-        "name": "ReportGeneratorOperator",
-        "dependency": {
-            "docker_image": null,
-            "dockerfile": null,
-            "requirements_file": null
-        },
-        "tags": [
-            "Example"
-        ],
-        "style": {
-            "node_label": "Generate Report",
-            "node_type": "sink",
-            "node_style": {
-                "backgroundColor": "#ebebeb"
-            },
-            "useIcon": true,
-            "icon_class_name": "fa-solid fa-file-invoice",
-            "iconStyle": {
-                "cursor": "pointer"
-            }
-        },
-        "description": "some description",
-        "input_schema": {
-            "title": "ReportGeneratorOperator",
-            "description": "Generate report and save as PDF.",
-            "type": "object",
-            "properties": {
-                "arg_1": {
-                    "title": "Arg 1",
-                    "description": "this is an argument",
-                    "default": "default_value",
-                    "type": "string"
-                },
-                "arg_2": {
-                    "title": "Arg 2",
-                    "description": "this is another argument",
-                    "default": "value",
-                    "type": "string"
-                }
-            }
-        },
-        "output_schema": {
-            "title": "OutputModel",
-            "description": "Generate report and save as PDF.",
-            "type": "object",
-            "properties": {
-                "message": {
-                    "title": "Message",
-                    "description": "Output message to log",
-                    "default": "Report generated successfully!",
-                    "type": "string"
-                }
-            }
-        },
-        "secrets_schema": null
-    },
     "UploadFileToGithubOperator": {
         "name": "UploadFileToGithubOperator",
         "dependency": {
@@ -404,5 +231,266 @@
             ]
         },
         "secrets_schema": null
+    },
+    "ExampleOperator": {
+        "name": "ExampleOperator",
+        "dependency": {
+            "docker_image": null,
+            "dockerfile": null,
+            "requirements_file": null
+        },
+        "tags": [
+            "Example"
+        ],
+        "style": {
+            "node_label": "Example Operator",
+            "node_type": "default",
+            "node_style": {
+                "backgroundColor": "#b3cde8"
+            },
+            "useIcon": true,
+            "icon_class_name": "fas fa-database",
+            "iconStyle": {
+                "cursor": "pointer"
+            }
+        },
+        "description": "some description",
+        "input_schema": {
+            "title": "InputModel",
+            "description": "Example Operator",
+            "type": "object",
+            "properties": {
+                "input_arg_1": {
+                    "title": "Input Arg 1",
+                    "description": "description",
+                    "default": "default",
+                    "type": "string"
+                }
+            }
+        },
+        "output_schema": {
+            "title": "OutputModel",
+            "description": "Example Operator",
+            "type": "object",
+            "properties": {
+                "message": {
+                    "title": "Message",
+                    "description": "Output message to log",
+                    "default": "",
+                    "type": "string"
+                },
+                "output_arg_1": {
+                    "title": "Output Arg 1",
+                    "description": "description",
+                    "default": "default",
+                    "type": "string"
+                }
+            }
+        },
+        "secrets_schema": {
+            "title": "SecretsModel",
+            "description": "Example Operator Secrets",
+            "type": "object",
+            "properties": {
+                "EXAMPLE_VAR": {
+                    "title": "Example Var",
+                    "description": "Example secret var",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "EXAMPLE_VAR"
+            ]
+        }
+    },
+    "ReportGeneratorOperator": {
+        "name": "ReportGeneratorOperator",
+        "dependency": {
+            "docker_image": null,
+            "dockerfile": null,
+            "requirements_file": null
+        },
+        "tags": [
+            "Example"
+        ],
+        "style": {
+            "node_label": "Generate Report",
+            "node_type": "sink",
+            "node_style": {
+                "backgroundColor": "#ebebeb"
+            },
+            "useIcon": true,
+            "icon_class_name": "fa-solid fa-file-invoice",
+            "iconStyle": {
+                "cursor": "pointer"
+            }
+        },
+        "description": "some description",
+        "input_schema": {
+            "title": "ReportGeneratorOperator",
+            "description": "Generate report and save as PDF.",
+            "type": "object",
+            "properties": {
+                "arg_1": {
+                    "title": "Arg 1",
+                    "description": "this is an argument",
+                    "default": "default_value",
+                    "type": "string"
+                },
+                "arg_2": {
+                    "title": "Arg 2",
+                    "description": "this is another argument",
+                    "default": "value",
+                    "type": "string"
+                }
+            }
+        },
+        "output_schema": {
+            "title": "OutputModel",
+            "description": "Generate report and save as PDF.",
+            "type": "object",
+            "properties": {
+                "message": {
+                    "title": "Message",
+                    "description": "Output message to log",
+                    "default": "Report generated successfully!",
+                    "type": "string"
+                }
+            }
+        },
+        "secrets_schema": null
+    },
+    "LoadPhotoFromS3Operator": {
+        "name": "LoadPhotoFromS3Operator",
+        "dependency": {
+            "docker_image": null,
+            "dockerfile": null,
+            "requirements_file": "requirements_0.txt"
+        },
+        "tags": [
+            "Example"
+        ],
+        "style": {
+            "node_label": "Load photo from S3",
+            "node_type": "source",
+            "node_style": {
+                "backgroundColor": "#b3cde8"
+            },
+            "useIcon": true,
+            "icon_class_name": "fas fa-database",
+            "iconStyle": {
+                "cursor": "pointer"
+            }
+        },
+        "description": "some description",
+        "input_schema": {
+            "title": "InputModel",
+            "description": "Get photo from S3 path",
+            "type": "object",
+            "properties": {
+                "bucket_name": {
+                    "title": "Bucket Name",
+                    "description": "this is the name of the bucket",
+                    "default": "bucket-name",
+                    "type": "string"
+                }
+            }
+        },
+        "output_schema": {
+            "title": "OutputModel",
+            "description": "Get photo from S3 path",
+            "type": "object",
+            "properties": {
+                "message": {
+                    "title": "Message",
+                    "description": "Output message to log",
+                    "default": "",
+                    "type": "string"
+                },
+                "output_file_path": {
+                    "title": "Output File Path",
+                    "description": "Path to the downloaded file",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "output_file_path"
+            ]
+        },
+        "secrets_schema": null
+    },
+    "ApiFetchExampleOperator": {
+        "name": "ApiFetchExampleOperator",
+        "dependency": {
+            "docker_image": null,
+            "dockerfile": null,
+            "requirements_file": null
+        },
+        "tags": [
+            "Example"
+        ],
+        "style": {
+            "node_label": "Api Fetch Example Operator",
+            "node_type": "default",
+            "node_style": {
+                "backgroundColor": "#b3cde8"
+            },
+            "useIcon": true,
+            "icon_class_name": "fas fa-database",
+            "iconStyle": {
+                "cursor": "pointer"
+            }
+        },
+        "description": "some description",
+        "input_schema": {
+            "title": "InputModel",
+            "description": "Example Operator",
+            "type": "object",
+            "properties": {
+                "input_arg_1": {
+                    "title": "Input Arg 1",
+                    "description": "description",
+                    "default": "default",
+                    "type": "string"
+                }
+            }
+        },
+        "output_schema": {
+            "title": "OutputModel",
+            "description": "Example Operator",
+            "type": "object",
+            "properties": {
+                "data": {
+                    "title": "Data",
+                    "description": "Output list with airbnb data",
+                    "type": "array",
+                    "items": {}
+                },
+                "message": {
+                    "title": "Message",
+                    "description": "Message to log",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "data",
+                "message"
+            ]
+        },
+        "secrets_schema": {
+            "title": "SecretsModel",
+            "description": "Example Operator Secrets",
+            "type": "object",
+            "properties": {
+                "API_KEY": {
+                    "title": "Api Key",
+                    "description": "API key",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "API_KEY"
+            ]
+        }
     }
 }
