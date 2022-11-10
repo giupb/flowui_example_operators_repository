@@ -2,7 +2,7 @@
     "name": "ApplyCV2FilterFromBytestring",
     "description": "Apply filter effect to bytestring Image",
     "dependency": {
-        "dockerfile": "Dockerfile_0"
+        "requirements_file": "requirements_0.txt"
     },
     "tags": [
         "Example"
