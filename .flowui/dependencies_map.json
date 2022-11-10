@@ -6,10 +6,10 @@
             "requirements_file": "requirements_0.txt"
         },
         "operators": [
-            "DownloadFileFromGithubOperator",
-            "UploadFileToGithubOperator",
             "UploadPhotoToS3Operator",
-            "LoadPhotoFromS3Operator"
+            "UploadFileToGithubOperator",
+            "LoadPhotoFromS3Operator",
+            "DownloadFileFromGithubOperator"
         ],
         "secrets": [
             "GITHUB_ACCESS_TOKEN"
@@ -23,9 +23,9 @@
             "requirements_file": null
         },
         "operators": [
-            "ExampleOperator",
             "ReportGeneratorOperator",
-            "ApiFetchExampleOperator"
+            "ApiFetchExampleOperator",
+            "ExampleOperator"
         ],
         "secrets": [
             "API_KEY",
