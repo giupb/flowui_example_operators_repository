@@ -11,6 +11,11 @@ class ExampleOperator(BaseOperator):
         """
         self.logger.info(secret_msg)
 
+        input_msg = f"""
+        Example Operator input arguments: {input_model}
+        """
+        self.logger.info(input_msg)
+
         msg = """
         #############################################################################
         #############################################################################\n
