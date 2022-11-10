@@ -14,8 +14,8 @@
         ],
         "secrets": [
             "AWS_SECRET_ACCESS_KEY",
-            "AWS_ACCESS_KEY_ID",
-            "GITHUB_ACCESS_TOKEN"
+            "GITHUB_ACCESS_TOKEN",
+            "AWS_ACCESS_KEY_ID"
         ],
         "source_image": "taufferconsulting/example_project_flowui_dependency_0:0.2.0"
     },
@@ -31,8 +31,8 @@
             "ExampleOperator"
         ],
         "secrets": [
-            "API_KEY",
-            "EXAMPLE_VAR"
+            "EXAMPLE_VAR",
+            "API_KEY"
         ],
         "source_image": "taufferconsulting/example_project_flowui_dependency_1:0.2.0"
     }
