@@ -1,4 +1,94 @@
 {
+    "ApplyCV2FilterFromBytestringOperator": {
+        "name": "ApplyCV2FilterFromBytestringOperator",
+        "dependency": {
+            "docker_image": null,
+            "dockerfile": null,
+            "requirements_file": "requirements_0.txt"
+        },
+        "tags": [
+            "Apply CV2"
+        ],
+        "style": {
+            "node_label": "Apply cv2 filter from bytestring",
+            "node_type": "source",
+            "node_style": {
+                "backgroundColor": "#b3cde8"
+            },
+            "useIcon": true,
+            "icon_class_name": "fas fa-database",
+            "iconStyle": {
+                "cursor": "pointer"
+            }
+        },
+        "description": "Apply filter effect to bytestring Image",
+        "input_schema": {
+            "title": "InputModel",
+            "description": "Apply effect to image",
+            "type": "object",
+            "properties": {
+                "bytestring_image": {
+                    "title": "Bytestring Image",
+                    "description": "Image as a bytestring",
+                    "type": "string"
+                },
+                "effect": {
+                    "description": "Effect to be applied",
+                    "default": "random",
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/EffectType"
+                        }
+                    ]
+                }
+            },
+            "required": [
+                "bytestring_image"
+            ],
+            "definitions": {
+                "EffectType": {
+                    "title": "EffectType",
+                    "description": "An enumeration.",
+                    "enum": [
+                        "random",
+                        "grayscale",
+                        "bright",
+                        "dark",
+                        "sharp",
+                        "sepia",
+                        "pencil",
+                        "pencil_color",
+                        "hdr",
+                        "invert",
+                        "summer",
+                        "winter"
+                    ],
+                    "type": "string"
+                }
+            }
+        },
+        "output_schema": {
+            "title": "OutputModel",
+            "description": "Apply effect to image",
+            "type": "object",
+            "properties": {
+                "bytestring_image": {
+                    "title": "Bytestring Image",
+                    "description": "Output image as a bytestring",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "bytestring_image"
+            ]
+        },
+        "secrets_schema": {
+            "title": "SecretsModel",
+            "description": "Secrets for Apply effect to image",
+            "type": "object",
+            "properties": {}
+        }
+    },
     "GetObjectFromS3Operator": {
         "name": "GetObjectFromS3Operator",
         "dependency": {

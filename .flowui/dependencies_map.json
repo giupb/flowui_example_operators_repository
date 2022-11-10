@@ -6,6 +6,7 @@
             "requirements_file": "requirements_0.txt"
         },
         "operators": [
+            "ApplyCV2FilterFromBytestringOperator",
             "GetObjectFromS3Operator",
             "UploadPhotoToS3Operator",
             "UploadFileToGithubOperator",
@@ -13,9 +14,9 @@
             "DownloadFileFromGithubOperator"
         ],
         "secrets": [
+            "AWS_ACCESS_KEY_ID",
             "AWS_SECRET_ACCESS_KEY",
-            "GITHUB_ACCESS_TOKEN",
-            "AWS_ACCESS_KEY_ID"
+            "GITHUB_ACCESS_TOKEN"
         ],
         "source_image": "taufferconsulting/example_project_flowui_dependency_0:0.2.0"
     },
@@ -31,8 +32,8 @@
             "ExampleOperator"
         ],
         "secrets": [
-            "EXAMPLE_VAR",
-            "API_KEY"
+            "API_KEY",
+            "EXAMPLE_VAR"
         ],
         "source_image": "taufferconsulting/example_project_flowui_dependency_1:0.2.0"
     }
