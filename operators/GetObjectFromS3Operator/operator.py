@@ -9,7 +9,8 @@ class GetObjectFromS3Operator(BaseOperator):
         """
         Get object from S3 and return it as a bytestring
         """
-        s3_client = boto3.client("s3")
+        self.logger.info('Getting object from S3')
+        s3_client = boto3.client("s3", aws_access_key_id=self.secrets.AWS_ACCESS_KEY_ID, aws_secret_access_key=self.secrets.AWS_SECRET_ACCESS_KEY)
     
         bucket = input_model.bucket_name
         path = input_model.path
@@ -18,7 +19,11 @@ class GetObjectFromS3Operator(BaseOperator):
         except ClientError as e:
             self.logger.error(e)
             raise e
+        self.logger.info('Object retrieved')
+
+        encoding = 'ISO-8859-1' # TODO change to model input
+        bytes_object = resp.get("Body").read().decode(encoding)
 
         return OutputModel(
-            bytes_object=resp.get("Body").read()
+            bytes_object=bytes_object
         )

@@ -16,6 +16,7 @@ class InputModel(BaseModel):
         description='this is the path to the object'
     )
 
+
 class OutputModel(BaseModel):
     """
     Get photo from S3 output model
