@@ -82,7 +82,7 @@ def apply_winter(img):
     return cv2.merge((blue_channel, green_channel, red_channel))
 
 
-class ApplyCV2FilterFromBytestring(BaseOperator):
+class ApplyCV2FilterFromBytestringOperator(BaseOperator):
 
     def operator_function(self, input_model: InputModel):
         """
