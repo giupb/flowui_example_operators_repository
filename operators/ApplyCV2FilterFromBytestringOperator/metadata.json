@@ -1,5 +1,5 @@
 {
-    "name": "ApplyCV2FilterFromBytestring",
+    "name": "ApplyCV2FilterFromBytestringOperator",
     "description": "Apply filter effect to bytestring Image",
     "dependency": {
         "requirements_file": "requirements_0.txt"
