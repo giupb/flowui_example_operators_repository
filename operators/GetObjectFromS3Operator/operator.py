@@ -1,9 +1,6 @@
 from flowui.base_operator import BaseOperator
 import boto3
-from models import InputModel, OutputModel
-
-import random
-import botocore
+from .models import InputModel, OutputModel
 from botocore.exceptions import ClientError
 
 
@@ -16,7 +13,11 @@ class GetObjectFromS3Operator(BaseOperator):
     
         bucket = input_model.bucket_name
         path = input_model.path
-        resp = s3_client.get_object(Bucket=bucket, Key=path)
+        try:
+            resp = s3_client.get_object(Bucket=bucket, Key=path)
+        except ClientError as e:
+            self.logger.error(e)
+            raise e
 
         return OutputModel(
             bytes_object=resp.get("Body").read()
