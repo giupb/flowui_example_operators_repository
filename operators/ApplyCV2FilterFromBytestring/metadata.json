@@ -5,10 +5,11 @@
         "requirements_file": "requirements_0.txt"
     },
     "tags": [
-        "Example"
+        "Apply CV2"
     ],
     "style": {
-        "node_label": "Apply filter",
+        "node_label": "Apply cv2 filter from bytestring",
+        "node_type": "source",
         "node_style": {
             "backgroundColor": "#b3cde8"
         },
