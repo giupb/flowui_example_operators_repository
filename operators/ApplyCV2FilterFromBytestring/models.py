@@ -38,3 +38,10 @@ class OutputModel(BaseModel):
     bytestring_image: str = Field(
         description="Output image as a bytestring",
     )
+
+class SecretsModel(BaseModel):
+    """
+    Secrets for Apply effect to image
+    """
+
+    pass
