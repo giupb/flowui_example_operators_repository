@@ -6,13 +6,16 @@
             "requirements_file": "requirements_0.txt"
         },
         "operators": [
+            "GetObjectFromS3Operator",
             "UploadPhotoToS3Operator",
             "UploadFileToGithubOperator",
             "LoadPhotoFromS3Operator",
             "DownloadFileFromGithubOperator"
         ],
         "secrets": [
-            "GITHUB_ACCESS_TOKEN"
+            "GITHUB_ACCESS_TOKEN",
+            "AWS_SECRET_ACCESS_KEY",
+            "AWS_ACCESS_KEY_ID"
         ],
         "source_image": "taufferconsulting/example_project_flowui_dependency_0:0.2.0"
     },

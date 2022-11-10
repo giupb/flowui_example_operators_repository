@@ -1,4 +1,83 @@
 {
+    "GetObjectFromS3Operator": {
+        "name": "GetObjectFromS3Operator",
+        "dependency": {
+            "docker_image": null,
+            "dockerfile": null,
+            "requirements_file": "requirements_0.txt"
+        },
+        "tags": [
+            "Example"
+        ],
+        "style": {
+            "node_label": "Get object from S3",
+            "node_type": "source",
+            "node_style": {
+                "backgroundColor": "#b3cde8"
+            },
+            "useIcon": true,
+            "icon_class_name": "fas fa-database",
+            "iconStyle": {
+                "cursor": "pointer"
+            }
+        },
+        "description": "some description",
+        "input_schema": {
+            "title": "InputModel",
+            "description": "Get object from S3 input model",
+            "type": "object",
+            "properties": {
+                "bucket_name": {
+                    "title": "Bucket Name",
+                    "description": "this is the name of the bucket",
+                    "default": "bucket-name",
+                    "type": "string"
+                },
+                "path": {
+                    "title": "Path",
+                    "description": "this is the path to the object",
+                    "default": "path/to/object",
+                    "type": "string"
+                }
+            }
+        },
+        "output_schema": {
+            "title": "OutputModel",
+            "description": "Get photo from S3 output model",
+            "type": "object",
+            "properties": {
+                "bytes_object": {
+                    "title": "Bytes Object",
+                    "description": "Output bytestring object",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "bytes_object"
+            ]
+        },
+        "secrets_schema": {
+            "title": "SecretsModel",
+            "description": "Example Operator Secrets",
+            "type": "object",
+            "properties": {
+                "AWS_ACCESS_KEY_ID": {
+                    "title": "Aws Access Key Id",
+                    "description": "AWS Access Key ID",
+                    "type": "string"
+                },
+                "AWS_SECRET_ACCESS_KEY": {
+                    "title": "Aws Secret Access Key",
+                    "description": "AWS Secret Access Key",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "AWS_ACCESS_KEY_ID",
+                "AWS_SECRET_ACCESS_KEY"
+            ]
+        }
+    },
     "UploadPhotoToS3Operator": {
         "name": "UploadPhotoToS3Operator",
         "dependency": {
@@ -387,11 +466,23 @@
             "description": "Example Operator",
             "type": "object",
             "properties": {
-                "input_arg_1": {
-                    "title": "Input Arg 1",
-                    "description": "description",
-                    "default": "default",
+                "airbnb_location_id": {
+                    "title": "Airbnb Location Id",
+                    "description": "Airbnb location id to search",
+                    "default": "ChIJN3P2zJlG0i0RACx9yvsLAwQ",
                     "type": "string"
+                },
+                "currency": {
+                    "title": "Currency",
+                    "description": "Currency to use in price",
+                    "default": "USD",
+                    "type": "string"
+                },
+                "adults": {
+                    "title": "Adults",
+                    "description": "Number of adults",
+                    "default": 1,
+                    "type": "integer"
                 }
             }
         },
