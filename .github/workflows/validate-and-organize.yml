@@ -39,13 +39,6 @@ jobs:
           GIT_STATUS=$(git status -s)
           [[ ! -z "$GIT_STATUS" ]] && git add .flowui/* && git commit -m "auto-organize" -a || echo "No changes to commit"
 
-      - name: Install Dev FlowUI # TODO remove this
-        run: |
-          pip uninstall -y flowui-project
-          git config --global url."https://${{ secrets.ACCESS_TOKEN }}@github".insteadOf https://github
-          python -m pip install -U pip
-          pip install --no-cache-dir git+https://github.com/Tauffer-Consulting/flowui.git@dev
-        
       - name: Create Release
         env: 
           GITHUB_REPOSITORY: ${{ github.repository }}
