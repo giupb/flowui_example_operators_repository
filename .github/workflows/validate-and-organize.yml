@@ -37,7 +37,7 @@ jobs:
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           GIT_STATUS=$(git status -s)
-          [[ ! -z "$GIT_STATUS" ]] && git add .flowui/* && git commit -m "auto-organize" -a || echo "No changes to commit"
+          [[ ! -z "$GIT_STATUS" ]] && git add .flowui/* && git commit -m "auto-organize" -a && git push || echo "No changes to commit"
 
       - name: Create Release
         env: 
