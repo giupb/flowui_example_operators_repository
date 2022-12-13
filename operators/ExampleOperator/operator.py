@@ -1,6 +1,6 @@
 from flowui.base_operator import BaseOperator
 from .models import InputModel, OutputModel
-
+import time
 
 class ExampleOperator(BaseOperator):
 
@@ -10,6 +10,7 @@ class ExampleOperator(BaseOperator):
         Example Operator secret: {self.secrets}
         """
         self.logger.info(secret_msg)
+        time.sleep(10)
 
         input_msg = f"""
         Example Operator input arguments: {input_model}
