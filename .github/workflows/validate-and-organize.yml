@@ -41,6 +41,7 @@ jobs:
 
       - name: Install Dev FlowUI # TODO remove this
         run: |
+          pip uninstall -y flowui-project
           git config --global url."https://${{ secrets.ACCESS_TOKEN }}@github".insteadOf https://github
           python -m pip install -U pip
           pip install --no-cache-dir git+https://github.com/Tauffer-Consulting/flowui.git@dev
