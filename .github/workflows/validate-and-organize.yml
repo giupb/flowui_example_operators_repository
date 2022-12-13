@@ -30,7 +30,7 @@ jobs:
         env:
           DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
           DOCKERHUB_PASSWORD: ${{ secrets.DOCKERHUB_PASSWORD }}
-        run: flowui organize --build-images --publish-images
+        run: flowui operator organize --build-images --publish-images
 
       - name: Commit files
         run: |
