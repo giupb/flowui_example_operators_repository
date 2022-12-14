@@ -10,7 +10,7 @@ class ExampleOperator(BaseOperator):
         Example Operator secret: {self.secrets}
         """
         self.logger.info(secret_msg)
-        time.sleep(15)
+        time.sleep(10)
 
         input_msg = f"""
         Example Operator input arguments: {input_model}
