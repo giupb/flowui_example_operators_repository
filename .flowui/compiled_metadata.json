@@ -89,8 +89,8 @@
             "properties": {}
         }
     },
-    "LoadPhotoFromS3Operator": {
-        "name": "LoadPhotoFromS3Operator",
+    "UploadFileToGithubOperator": {
+        "name": "UploadFileToGithubOperator",
         "dependency": {
             "docker_image": null,
             "dockerfile": null,
@@ -100,13 +100,13 @@
             "Example"
         ],
         "style": {
-            "node_label": "Load photo from S3",
-            "node_type": "source",
+            "node_label": "Upload file to Github",
+            "node_type": "default",
             "node_style": {
                 "backgroundColor": "#b3cde8"
             },
             "useIcon": true,
-            "icon_class_name": "fas fa-database",
+            "icon_class_name": "fa-solid fa-circle",
             "iconStyle": {
                 "cursor": "pointer"
             }
@@ -114,26 +114,34 @@
         "description": "some description",
         "input_schema": {
             "title": "InputModel",
-            "description": "Get photo from S3 path",
+            "description": "Upload file to Github",
             "type": "object",
             "properties": {
-                "bucket_name": {
-                    "title": "Bucket Name",
-                    "description": "this is the name of the bucket",
-                    "default": "bucket-name",
+                "repository_name": {
+                    "title": "Repository Name",
+                    "description": "The name of the target repository",
                     "type": "string"
                 },
-                "save_as_file": {
-                    "title": "Save As File",
-                    "description": "Save result as file. If false, return image data in XCOM",
-                    "default": false,
-                    "type": "boolean"
+                "branch": {
+                    "title": "Branch",
+                    "description": "The branch to be used",
+                    "default": "main",
+                    "type": "string"
+                },
+                "input_file_path": {
+                    "title": "Input File Path",
+                    "description": "The file path to be uploaded",
+                    "type": "string"
                 }
-            }
+            },
+            "required": [
+                "repository_name",
+                "input_file_path"
+            ]
         },
         "output_schema": {
             "title": "OutputModel",
-            "description": "Get photo from S3 path",
+            "description": "Upload file to Github",
             "type": "object",
             "properties": {
                 "message": {
@@ -142,108 +150,17 @@
                     "default": "",
                     "type": "string"
                 },
-                "output_file_path": {
-                    "title": "Output File Path",
-                    "description": "Path to the downloaded file",
-                    "type": "string"
-                },
-                "image_data": {
-                    "title": "Image Data",
-                    "description": "Downloaded image data",
+                "file_url": {
+                    "title": "File Url",
+                    "description": "Url for the uploaded file",
                     "type": "string"
                 }
             },
             "required": [
-                "output_file_path"
+                "file_url"
             ]
         },
         "secrets_schema": null
-    },
-    "ApiFetchExampleOperator": {
-        "name": "ApiFetchExampleOperator",
-        "dependency": {
-            "docker_image": null,
-            "dockerfile": null,
-            "requirements_file": null
-        },
-        "tags": [
-            "Example"
-        ],
-        "style": {
-            "node_label": "Api Fetch Example Operator",
-            "node_type": "default",
-            "node_style": {
-                "backgroundColor": "#b3cde8"
-            },
-            "useIcon": true,
-            "icon_class_name": "fas fa-database",
-            "iconStyle": {
-                "cursor": "pointer"
-            }
-        },
-        "description": "some description",
-        "input_schema": {
-            "title": "InputModel",
-            "description": "Example Operator",
-            "type": "object",
-            "properties": {
-                "airbnb_location_id": {
-                    "title": "Airbnb Location Id",
-                    "description": "Airbnb location id to search",
-                    "default": "ChIJN3P2zJlG0i0RACx9yvsLAwQ",
-                    "type": "string"
-                },
-                "currency": {
-                    "title": "Currency",
-                    "description": "Currency to use in price",
-                    "default": "USD",
-                    "type": "string"
-                },
-                "adults": {
-                    "title": "Adults",
-                    "description": "Number of adults",
-                    "default": 1,
-                    "type": "integer"
-                }
-            }
-        },
-        "output_schema": {
-            "title": "OutputModel",
-            "description": "Example Operator",
-            "type": "object",
-            "properties": {
-                "data": {
-                    "title": "Data",
-                    "description": "Output list with airbnb data",
-                    "type": "array",
-                    "items": {}
-                },
-                "message": {
-                    "title": "Message",
-                    "description": "Message to log",
-                    "type": "string"
-                }
-            },
-            "required": [
-                "data",
-                "message"
-            ]
-        },
-        "secrets_schema": {
-            "title": "SecretsModel",
-            "description": "Example Operator Secrets",
-            "type": "object",
-            "properties": {
-                "API_KEY": {
-                    "title": "Api Key",
-                    "description": "API key",
-                    "type": "string"
-                }
-            },
-            "required": [
-                "API_KEY"
-            ]
-        }
     },
     "UploadPhotoToS3Operator": {
         "name": "UploadPhotoToS3Operator",
@@ -314,6 +231,163 @@
             },
             "required": [
                 "file_url"
+            ]
+        },
+        "secrets_schema": null
+    },
+    "DownloadFileFromGithubOperator": {
+        "name": "DownloadFileFromGithubOperator",
+        "dependency": {
+            "docker_image": null,
+            "dockerfile": null,
+            "requirements_file": "requirements_0.txt"
+        },
+        "tags": [
+            "Example"
+        ],
+        "style": {
+            "node_label": "Download file from Github",
+            "node_type": "source",
+            "node_style": {
+                "backgroundColor": "#b3cde8"
+            },
+            "useIcon": true,
+            "icon_class_name": "fas fa-database",
+            "iconStyle": {
+                "cursor": "pointer"
+            }
+        },
+        "description": "some description",
+        "input_schema": {
+            "title": "InputModel",
+            "description": "Download random file from Github",
+            "type": "object",
+            "properties": {
+                "repository_name": {
+                    "title": "Repository Name",
+                    "description": "The name of the target repository",
+                    "type": "string"
+                },
+                "branch": {
+                    "title": "Branch",
+                    "description": "The branch to be used",
+                    "default": "main",
+                    "type": "string"
+                },
+                "folder_path": {
+                    "title": "Folder Path",
+                    "description": "The folder path within the repository",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "repository_name",
+                "folder_path"
+            ]
+        },
+        "output_schema": {
+            "title": "OutputModel",
+            "description": "Download random file from Github",
+            "type": "object",
+            "properties": {
+                "message": {
+                    "title": "Message",
+                    "description": "Output message to log",
+                    "default": "",
+                    "type": "string"
+                },
+                "output_file_path": {
+                    "title": "Output File Path",
+                    "description": "The path to the downloaded file",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "output_file_path"
+            ]
+        },
+        "secrets_schema": {
+            "title": "SecretsModel",
+            "description": "Download random file from Github",
+            "type": "object",
+            "properties": {
+                "GITHUB_ACCESS_TOKEN": {
+                    "title": "Github Access Token",
+                    "description": "Github access token",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "GITHUB_ACCESS_TOKEN"
+            ]
+        }
+    },
+    "LoadPhotoFromS3Operator": {
+        "name": "LoadPhotoFromS3Operator",
+        "dependency": {
+            "docker_image": null,
+            "dockerfile": null,
+            "requirements_file": "requirements_0.txt"
+        },
+        "tags": [
+            "Example"
+        ],
+        "style": {
+            "node_label": "Load photo from S3",
+            "node_type": "source",
+            "node_style": {
+                "backgroundColor": "#b3cde8"
+            },
+            "useIcon": true,
+            "icon_class_name": "fas fa-database",
+            "iconStyle": {
+                "cursor": "pointer"
+            }
+        },
+        "description": "some description",
+        "input_schema": {
+            "title": "InputModel",
+            "description": "Get photo from S3 path",
+            "type": "object",
+            "properties": {
+                "bucket_name": {
+                    "title": "Bucket Name",
+                    "description": "this is the name of the bucket",
+                    "default": "bucket-name",
+                    "type": "string"
+                },
+                "save_as_file": {
+                    "title": "Save As File",
+                    "description": "Save result as file. If false, return image data in XCOM",
+                    "default": false,
+                    "type": "boolean"
+                }
+            }
+        },
+        "output_schema": {
+            "title": "OutputModel",
+            "description": "Get photo from S3 path",
+            "type": "object",
+            "properties": {
+                "message": {
+                    "title": "Message",
+                    "description": "Output message to log",
+                    "default": "",
+                    "type": "string"
+                },
+                "output_file_path": {
+                    "title": "Output File Path",
+                    "description": "Path to the downloaded file",
+                    "type": "string"
+                },
+                "image_data": {
+                    "title": "Image Data",
+                    "description": "Downloaded image data",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "output_file_path"
             ]
         },
         "secrets_schema": null
@@ -468,6 +542,92 @@
             ]
         }
     },
+    "ApiFetchExampleOperator": {
+        "name": "ApiFetchExampleOperator",
+        "dependency": {
+            "docker_image": null,
+            "dockerfile": null,
+            "requirements_file": null
+        },
+        "tags": [
+            "Example"
+        ],
+        "style": {
+            "node_label": "Api Fetch Example Operator",
+            "node_type": "default",
+            "node_style": {
+                "backgroundColor": "#b3cde8"
+            },
+            "useIcon": true,
+            "icon_class_name": "fas fa-database",
+            "iconStyle": {
+                "cursor": "pointer"
+            }
+        },
+        "description": "some description",
+        "input_schema": {
+            "title": "InputModel",
+            "description": "Example Operator",
+            "type": "object",
+            "properties": {
+                "airbnb_location_id": {
+                    "title": "Airbnb Location Id",
+                    "description": "Airbnb location id to search",
+                    "default": "ChIJN3P2zJlG0i0RACx9yvsLAwQ",
+                    "type": "string"
+                },
+                "currency": {
+                    "title": "Currency",
+                    "description": "Currency to use in price",
+                    "default": "USD",
+                    "type": "string"
+                },
+                "adults": {
+                    "title": "Adults",
+                    "description": "Number of adults",
+                    "default": 1,
+                    "type": "integer"
+                }
+            }
+        },
+        "output_schema": {
+            "title": "OutputModel",
+            "description": "Example Operator",
+            "type": "object",
+            "properties": {
+                "data": {
+                    "title": "Data",
+                    "description": "Output list with airbnb data",
+                    "type": "array",
+                    "items": {}
+                },
+                "message": {
+                    "title": "Message",
+                    "description": "Message to log",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "data",
+                "message"
+            ]
+        },
+        "secrets_schema": {
+            "title": "SecretsModel",
+            "description": "Example Operator Secrets",
+            "type": "object",
+            "properties": {
+                "API_KEY": {
+                    "title": "Api Key",
+                    "description": "API key",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "API_KEY"
+            ]
+        }
+    },
     "ReportGeneratorOperator": {
         "name": "ReportGeneratorOperator",
         "dependency": {
@@ -524,165 +684,5 @@
             }
         },
         "secrets_schema": null
-    },
-    "UploadFileToGithubOperator": {
-        "name": "UploadFileToGithubOperator",
-        "dependency": {
-            "docker_image": null,
-            "dockerfile": null,
-            "requirements_file": "requirements_0.txt"
-        },
-        "tags": [
-            "Example"
-        ],
-        "style": {
-            "node_label": "Upload file to Github",
-            "node_type": "default",
-            "node_style": {
-                "backgroundColor": "#b3cde8"
-            },
-            "useIcon": true,
-            "icon_class_name": "fa-solid fa-circle",
-            "iconStyle": {
-                "cursor": "pointer"
-            }
-        },
-        "description": "some description",
-        "input_schema": {
-            "title": "InputModel",
-            "description": "Upload file to Github",
-            "type": "object",
-            "properties": {
-                "repository_name": {
-                    "title": "Repository Name",
-                    "description": "The name of the target repository",
-                    "type": "string"
-                },
-                "branch": {
-                    "title": "Branch",
-                    "description": "The branch to be used",
-                    "default": "main",
-                    "type": "string"
-                },
-                "input_file_path": {
-                    "title": "Input File Path",
-                    "description": "The file path to be uploaded",
-                    "type": "string"
-                }
-            },
-            "required": [
-                "repository_name",
-                "input_file_path"
-            ]
-        },
-        "output_schema": {
-            "title": "OutputModel",
-            "description": "Upload file to Github",
-            "type": "object",
-            "properties": {
-                "message": {
-                    "title": "Message",
-                    "description": "Output message to log",
-                    "default": "",
-                    "type": "string"
-                },
-                "file_url": {
-                    "title": "File Url",
-                    "description": "Url for the uploaded file",
-                    "type": "string"
-                }
-            },
-            "required": [
-                "file_url"
-            ]
-        },
-        "secrets_schema": null
-    },
-    "DownloadFileFromGithubOperator": {
-        "name": "DownloadFileFromGithubOperator",
-        "dependency": {
-            "docker_image": null,
-            "dockerfile": null,
-            "requirements_file": "requirements_0.txt"
-        },
-        "tags": [
-            "Example"
-        ],
-        "style": {
-            "node_label": "Download file from Github",
-            "node_type": "source",
-            "node_style": {
-                "backgroundColor": "#b3cde8"
-            },
-            "useIcon": true,
-            "icon_class_name": "fas fa-database",
-            "iconStyle": {
-                "cursor": "pointer"
-            }
-        },
-        "description": "some description",
-        "input_schema": {
-            "title": "InputModel",
-            "description": "Download random file from Github",
-            "type": "object",
-            "properties": {
-                "repository_name": {
-                    "title": "Repository Name",
-                    "description": "The name of the target repository",
-                    "type": "string"
-                },
-                "branch": {
-                    "title": "Branch",
-                    "description": "The branch to be used",
-                    "default": "main",
-                    "type": "string"
-                },
-                "folder_path": {
-                    "title": "Folder Path",
-                    "description": "The folder path within the repository",
-                    "type": "string"
-                }
-            },
-            "required": [
-                "repository_name",
-                "folder_path"
-            ]
-        },
-        "output_schema": {
-            "title": "OutputModel",
-            "description": "Download random file from Github",
-            "type": "object",
-            "properties": {
-                "message": {
-                    "title": "Message",
-                    "description": "Output message to log",
-                    "default": "",
-                    "type": "string"
-                },
-                "output_file_path": {
-                    "title": "Output File Path",
-                    "description": "The path to the downloaded file",
-                    "type": "string"
-                }
-            },
-            "required": [
-                "output_file_path"
-            ]
-        },
-        "secrets_schema": {
-            "title": "SecretsModel",
-            "description": "Download random file from Github",
-            "type": "object",
-            "properties": {
-                "GITHUB_ACCESS_TOKEN": {
-                    "title": "Github Access Token",
-                    "description": "Github access token",
-                    "type": "string"
-                }
-            },
-            "required": [
-                "GITHUB_ACCESS_TOKEN"
-            ]
-        }
     }
 }

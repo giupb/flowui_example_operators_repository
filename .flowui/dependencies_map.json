@@ -7,11 +7,11 @@
         },
         "operators": [
             "ApplyCV2FilterFromBytestringOperator",
-            "LoadPhotoFromS3Operator",
-            "UploadPhotoToS3Operator",
-            "GetObjectFromS3Operator",
             "UploadFileToGithubOperator",
-            "DownloadFileFromGithubOperator"
+            "UploadPhotoToS3Operator",
+            "DownloadFileFromGithubOperator",
+            "LoadPhotoFromS3Operator",
+            "GetObjectFromS3Operator"
         ],
         "secrets": [
             "GITHUB_ACCESS_TOKEN",
@@ -27,13 +27,13 @@
             "requirements_file": null
         },
         "operators": [
-            "ApiFetchExampleOperator",
             "ExampleOperator",
+            "ApiFetchExampleOperator",
             "ReportGeneratorOperator"
         ],
         "secrets": [
-            "API_KEY",
-            "EXAMPLE_VAR"
+            "EXAMPLE_VAR",
+            "API_KEY"
         ],
         "source_image": "taufferconsulting/example_project_image_1:0.2.0"
     }
