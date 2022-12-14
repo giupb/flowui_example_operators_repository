@@ -22,9 +22,11 @@ jobs:
           python-version: "3.8"
 
       - name: Pip install packages
+        # using branch version to test only
         run: |
           python -m pip install -U pip
-          pip install --no-cache-dir flowui-project
+          git config --global url."https://${{ secrets.ACCESS_TOKEN }}@github".insteadOf https://github
+          pip install --no-cache-dir git+https://github.com/Tauffer-Consulting/flowui.git@fix/fsspec
 
       - name: Run organize, build and publish images
         env:
