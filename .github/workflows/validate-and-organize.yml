@@ -40,8 +40,8 @@ jobs:
           GIT_STATUS=$(git status -s)
           [[ ! -z "$GIT_STATUS" ]] && git add .flowui/* && git commit -m "auto-organize" -a && git push || echo "No changes to commit"
 
-      - name: Create Release
-        env: 
-          GITHUB_REPOSITORY: ${{ github.repository }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: flowui operator release
+      # - name: Create Release
+      #   env: 
+      #     GITHUB_REPOSITORY: ${{ github.repository }}
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #   run: flowui operator release
