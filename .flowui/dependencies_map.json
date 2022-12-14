@@ -1,5 +1,5 @@
 {
-    "example_project_flowui_dependency_0": {
+    "example_project_image_0": {
         "dependency": {
             "docker_image": null,
             "dockerfile": null,
@@ -7,34 +7,34 @@
         },
         "operators": [
             "ApplyCV2FilterFromBytestringOperator",
-            "GetObjectFromS3Operator",
-            "UploadPhotoToS3Operator",
             "UploadFileToGithubOperator",
+            "UploadPhotoToS3Operator",
+            "DownloadFileFromGithubOperator",
             "LoadPhotoFromS3Operator",
-            "DownloadFileFromGithubOperator"
+            "GetObjectFromS3Operator"
         ],
         "secrets": [
+            "GITHUB_ACCESS_TOKEN",
             "AWS_ACCESS_KEY_ID",
-            "AWS_SECRET_ACCESS_KEY",
-            "GITHUB_ACCESS_TOKEN"
+            "AWS_SECRET_ACCESS_KEY"
         ],
-        "source_image": "taufferconsulting/example_project_flowui_dependency_0:0.2.0"
+        "source_image": "taufferconsulting/example_project_image_0:0.2.0"
     },
-    "example_project_flowui_dependency_1": {
+    "example_project_image_1": {
         "dependency": {
             "docker_image": null,
             "dockerfile": null,
             "requirements_file": null
         },
         "operators": [
-            "ReportGeneratorOperator",
+            "ExampleOperator",
             "ApiFetchExampleOperator",
-            "ExampleOperator"
+            "ReportGeneratorOperator"
         ],
         "secrets": [
-            "EXAMPLE_VAR",
-            "API_KEY"
+            "API_KEY",
+            "EXAMPLE_VAR"
         ],
-        "source_image": "taufferconsulting/example_project_flowui_dependency_1:0.2.0"
+        "source_image": "taufferconsulting/example_project_image_1:0.2.0"
     }
 }

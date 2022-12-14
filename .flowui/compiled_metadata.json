@@ -89,158 +89,6 @@
             "properties": {}
         }
     },
-    "GetObjectFromS3Operator": {
-        "name": "GetObjectFromS3Operator",
-        "dependency": {
-            "docker_image": null,
-            "dockerfile": null,
-            "requirements_file": "requirements_0.txt"
-        },
-        "tags": [
-            "Example"
-        ],
-        "style": {
-            "node_label": "Get object from S3",
-            "node_type": "source",
-            "node_style": {
-                "backgroundColor": "#b3cde8"
-            },
-            "useIcon": true,
-            "icon_class_name": "fas fa-database",
-            "iconStyle": {
-                "cursor": "pointer"
-            }
-        },
-        "description": "some description",
-        "input_schema": {
-            "title": "InputModel",
-            "description": "Get object from S3 input model",
-            "type": "object",
-            "properties": {
-                "bucket_name": {
-                    "title": "Bucket Name",
-                    "description": "this is the name of the bucket",
-                    "default": "bucket-name",
-                    "type": "string"
-                },
-                "path": {
-                    "title": "Path",
-                    "description": "this is the path to the object",
-                    "default": "path/to/object",
-                    "type": "string"
-                }
-            }
-        },
-        "output_schema": {
-            "title": "OutputModel",
-            "description": "Get photo from S3 output model",
-            "type": "object",
-            "properties": {
-                "bytes_object": {
-                    "title": "Bytes Object",
-                    "description": "Output bytestring object",
-                    "type": "string"
-                }
-            },
-            "required": [
-                "bytes_object"
-            ]
-        },
-        "secrets_schema": {
-            "title": "SecretsModel",
-            "description": "Example Operator Secrets",
-            "type": "object",
-            "properties": {
-                "AWS_ACCESS_KEY_ID": {
-                    "title": "Aws Access Key Id",
-                    "description": "AWS Access Key ID",
-                    "type": "string"
-                },
-                "AWS_SECRET_ACCESS_KEY": {
-                    "title": "Aws Secret Access Key",
-                    "description": "AWS Secret Access Key",
-                    "type": "string"
-                }
-            },
-            "required": [
-                "AWS_ACCESS_KEY_ID",
-                "AWS_SECRET_ACCESS_KEY"
-            ]
-        }
-    },
-    "UploadPhotoToS3Operator": {
-        "name": "UploadPhotoToS3Operator",
-        "dependency": {
-            "docker_image": null,
-            "dockerfile": null,
-            "requirements_file": "requirements_0.txt"
-        },
-        "tags": [
-            "Example"
-        ],
-        "style": {
-            "node_label": "Upload photo to S3",
-            "node_type": "default",
-            "node_style": {
-                "backgroundColor": "#b3cde8"
-            },
-            "useIcon": true,
-            "icon_class_name": "fa-solid fa-circle",
-            "iconStyle": {
-                "cursor": "pointer"
-            }
-        },
-        "description": "some description",
-        "input_schema": {
-            "title": "InputModel",
-            "description": "Upload photo from mounted volume to S3 folder",
-            "type": "object",
-            "properties": {
-                "s3_bucket_name": {
-                    "title": "S3 Bucket Name",
-                    "description": "Name of the bucket",
-                    "default": "bucket-name",
-                    "type": "string"
-                },
-                "s3_folder_name": {
-                    "title": "S3 Folder Name",
-                    "description": "Folder path within the bucket",
-                    "default": "edited",
-                    "type": "string"
-                },
-                "input_file_path": {
-                    "title": "Input File Path",
-                    "description": "The file path to be uploaded",
-                    "type": "string"
-                }
-            },
-            "required": [
-                "input_file_path"
-            ]
-        },
-        "output_schema": {
-            "title": "OutputModel",
-            "description": "Upload photo from mounted volume to S3 folder",
-            "type": "object",
-            "properties": {
-                "message": {
-                    "title": "Message",
-                    "description": "Output message to log",
-                    "default": "",
-                    "type": "string"
-                },
-                "file_url": {
-                    "title": "File Url",
-                    "description": "Url for the uploaded file",
-                    "type": "string"
-                }
-            },
-            "required": [
-                "file_url"
-            ]
-        },
-        "secrets_schema": null
-    },
     "UploadFileToGithubOperator": {
         "name": "UploadFileToGithubOperator",
         "dependency": {
@@ -314,8 +162,8 @@
         },
         "secrets_schema": null
     },
-    "LoadPhotoFromS3Operator": {
-        "name": "LoadPhotoFromS3Operator",
+    "UploadPhotoToS3Operator": {
+        "name": "UploadPhotoToS3Operator",
         "dependency": {
             "docker_image": null,
             "dockerfile": null,
@@ -325,13 +173,13 @@
             "Example"
         ],
         "style": {
-            "node_label": "Load photo from S3",
-            "node_type": "source",
+            "node_label": "Upload photo to S3",
+            "node_type": "default",
             "node_style": {
                 "backgroundColor": "#b3cde8"
             },
             "useIcon": true,
-            "icon_class_name": "fas fa-database",
+            "icon_class_name": "fa-solid fa-circle",
             "iconStyle": {
                 "cursor": "pointer"
             }
@@ -339,26 +187,34 @@
         "description": "some description",
         "input_schema": {
             "title": "InputModel",
-            "description": "Get photo from S3 path",
+            "description": "Upload photo from mounted volume to S3 folder",
             "type": "object",
             "properties": {
-                "bucket_name": {
-                    "title": "Bucket Name",
-                    "description": "this is the name of the bucket",
+                "s3_bucket_name": {
+                    "title": "S3 Bucket Name",
+                    "description": "Name of the bucket",
                     "default": "bucket-name",
                     "type": "string"
                 },
-                "save_as_file": {
-                    "title": "Save As File",
-                    "description": "Save result as file. If false, return image data in XCOM",
-                    "default": false,
-                    "type": "boolean"
+                "s3_folder_name": {
+                    "title": "S3 Folder Name",
+                    "description": "Folder path within the bucket",
+                    "default": "edited",
+                    "type": "string"
+                },
+                "input_file_path": {
+                    "title": "Input File Path",
+                    "description": "The file path to be uploaded",
+                    "type": "string"
                 }
-            }
+            },
+            "required": [
+                "input_file_path"
+            ]
         },
         "output_schema": {
             "title": "OutputModel",
-            "description": "Get photo from S3 path",
+            "description": "Upload photo from mounted volume to S3 folder",
             "type": "object",
             "properties": {
                 "message": {
@@ -367,77 +223,15 @@
                     "default": "",
                     "type": "string"
                 },
-                "output_file_path": {
-                    "title": "Output File Path",
-                    "description": "Path to the downloaded file",
-                    "type": "string"
-                },
-                "image_data": {
-                    "title": "Image Data",
-                    "description": "Downloaded image data",
+                "file_url": {
+                    "title": "File Url",
+                    "description": "Url for the uploaded file",
                     "type": "string"
                 }
             },
             "required": [
-                "output_file_path"
+                "file_url"
             ]
-        },
-        "secrets_schema": null
-    },
-    "ReportGeneratorOperator": {
-        "name": "ReportGeneratorOperator",
-        "dependency": {
-            "docker_image": null,
-            "dockerfile": null,
-            "requirements_file": null
-        },
-        "tags": [
-            "Example"
-        ],
-        "style": {
-            "node_label": "Generate Report",
-            "node_type": "sink",
-            "node_style": {
-                "backgroundColor": "#ebebeb"
-            },
-            "useIcon": true,
-            "icon_class_name": "fa-solid fa-file-invoice",
-            "iconStyle": {
-                "cursor": "pointer"
-            }
-        },
-        "description": "some description",
-        "input_schema": {
-            "title": "ReportGeneratorOperator",
-            "description": "Generate report and save as PDF.",
-            "type": "object",
-            "properties": {
-                "arg_1": {
-                    "title": "Arg 1",
-                    "description": "this is an argument",
-                    "default": "default_value",
-                    "type": "string"
-                },
-                "arg_2": {
-                    "title": "Arg 2",
-                    "description": "this is another argument",
-                    "default": "value",
-                    "type": "string"
-                }
-            }
-        },
-        "output_schema": {
-            "title": "OutputModel",
-            "description": "Generate report and save as PDF.",
-            "type": "object",
-            "properties": {
-                "message": {
-                    "title": "Message",
-                    "description": "Output message to log",
-                    "default": "Report generated successfully!",
-                    "type": "string"
-                }
-            }
         },
         "secrets_schema": null
     },
@@ -528,6 +322,226 @@
             ]
         }
     },
+    "LoadPhotoFromS3Operator": {
+        "name": "LoadPhotoFromS3Operator",
+        "dependency": {
+            "docker_image": null,
+            "dockerfile": null,
+            "requirements_file": "requirements_0.txt"
+        },
+        "tags": [
+            "Example"
+        ],
+        "style": {
+            "node_label": "Load photo from S3",
+            "node_type": "source",
+            "node_style": {
+                "backgroundColor": "#b3cde8"
+            },
+            "useIcon": true,
+            "icon_class_name": "fas fa-database",
+            "iconStyle": {
+                "cursor": "pointer"
+            }
+        },
+        "description": "some description",
+        "input_schema": {
+            "title": "InputModel",
+            "description": "Get photo from S3 path",
+            "type": "object",
+            "properties": {
+                "bucket_name": {
+                    "title": "Bucket Name",
+                    "description": "this is the name of the bucket",
+                    "default": "bucket-name",
+                    "type": "string"
+                },
+                "save_as_file": {
+                    "title": "Save As File",
+                    "description": "Save result as file. If false, return image data in XCOM",
+                    "default": false,
+                    "type": "boolean"
+                }
+            }
+        },
+        "output_schema": {
+            "title": "OutputModel",
+            "description": "Get photo from S3 path",
+            "type": "object",
+            "properties": {
+                "message": {
+                    "title": "Message",
+                    "description": "Output message to log",
+                    "default": "",
+                    "type": "string"
+                },
+                "output_file_path": {
+                    "title": "Output File Path",
+                    "description": "Path to the downloaded file",
+                    "type": "string"
+                },
+                "image_data": {
+                    "title": "Image Data",
+                    "description": "Downloaded image data",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "output_file_path"
+            ]
+        },
+        "secrets_schema": null
+    },
+    "ExampleOperator": {
+        "name": "ExampleOperator",
+        "dependency": {
+            "docker_image": null,
+            "dockerfile": null,
+            "requirements_file": null
+        },
+        "tags": [
+            "Example"
+        ],
+        "style": {
+            "node_label": "Example Operator",
+            "node_type": "default",
+            "node_style": {
+                "backgroundColor": "#b3cde8"
+            },
+            "useIcon": true,
+            "icon_class_name": "fas fa-database",
+            "iconStyle": {
+                "cursor": "pointer"
+            }
+        },
+        "description": "some description",
+        "input_schema": {
+            "title": "InputModel",
+            "description": "Example Operator",
+            "type": "object",
+            "properties": {
+                "input_arg_1": {
+                    "title": "Input Arg 1",
+                    "description": "description",
+                    "default": "default",
+                    "type": "string"
+                }
+            }
+        },
+        "output_schema": {
+            "title": "OutputModel",
+            "description": "Example Operator",
+            "type": "object",
+            "properties": {
+                "message": {
+                    "title": "Message",
+                    "description": "Output message to log",
+                    "default": "",
+                    "type": "string"
+                },
+                "output_arg_1": {
+                    "title": "Output Arg 1",
+                    "description": "description",
+                    "default": "default",
+                    "type": "string"
+                }
+            }
+        },
+        "secrets_schema": {
+            "title": "SecretsModel",
+            "description": "Example Operator Secrets",
+            "type": "object",
+            "properties": {
+                "EXAMPLE_VAR": {
+                    "title": "Example Var",
+                    "description": "Example secret var",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "EXAMPLE_VAR"
+            ]
+        }
+    },
+    "GetObjectFromS3Operator": {
+        "name": "GetObjectFromS3Operator",
+        "dependency": {
+            "docker_image": null,
+            "dockerfile": null,
+            "requirements_file": "requirements_0.txt"
+        },
+        "tags": [
+            "Example"
+        ],
+        "style": {
+            "node_label": "Get object from S3",
+            "node_type": "source",
+            "node_style": {
+                "backgroundColor": "#b3cde8"
+            },
+            "useIcon": true,
+            "icon_class_name": "fas fa-database",
+            "iconStyle": {
+                "cursor": "pointer"
+            }
+        },
+        "description": "some description",
+        "input_schema": {
+            "title": "InputModel",
+            "description": "Get object from S3 input model",
+            "type": "object",
+            "properties": {
+                "bucket_name": {
+                    "title": "Bucket Name",
+                    "description": "this is the name of the bucket",
+                    "default": "bucket-name",
+                    "type": "string"
+                },
+                "path": {
+                    "title": "Path",
+                    "description": "this is the path to the object",
+                    "default": "path/to/object",
+                    "type": "string"
+                }
+            }
+        },
+        "output_schema": {
+            "title": "OutputModel",
+            "description": "Get photo from S3 output model",
+            "type": "object",
+            "properties": {
+                "bytes_object": {
+                    "title": "Bytes Object",
+                    "description": "Output bytestring object",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "bytes_object"
+            ]
+        },
+        "secrets_schema": {
+            "title": "SecretsModel",
+            "description": "Example Operator Secrets",
+            "type": "object",
+            "properties": {
+                "AWS_ACCESS_KEY_ID": {
+                    "title": "Aws Access Key Id",
+                    "description": "AWS Access Key ID",
+                    "type": "string"
+                },
+                "AWS_SECRET_ACCESS_KEY": {
+                    "title": "Aws Secret Access Key",
+                    "description": "AWS Secret Access Key",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "AWS_ACCESS_KEY_ID",
+                "AWS_SECRET_ACCESS_KEY"
+            ]
+        }
+    },
     "ApiFetchExampleOperator": {
         "name": "ApiFetchExampleOperator",
         "dependency": {
@@ -614,8 +628,8 @@
             ]
         }
     },
-    "ExampleOperator": {
-        "name": "ExampleOperator",
+    "ReportGeneratorOperator": {
+        "name": "ReportGeneratorOperator",
         "dependency": {
             "docker_image": null,
             "dockerfile": null,
@@ -625,64 +639,50 @@
             "Example"
         ],
         "style": {
-            "node_label": "Example Operator",
-            "node_type": "default",
+            "node_label": "Generate Report",
+            "node_type": "sink",
             "node_style": {
-                "backgroundColor": "#b3cde8"
+                "backgroundColor": "#ebebeb"
             },
             "useIcon": true,
-            "icon_class_name": "fas fa-database",
+            "icon_class_name": "fa-solid fa-file-invoice",
             "iconStyle": {
                 "cursor": "pointer"
             }
         },
         "description": "some description",
         "input_schema": {
-            "title": "InputModel",
-            "description": "Example Operator",
+            "title": "ReportGeneratorOperator",
+            "description": "Generate report and save as PDF.",
             "type": "object",
             "properties": {
-                "input_arg_1": {
-                    "title": "Input Arg 1",
-                    "description": "description",
-                    "default": "default",
+                "arg_1": {
+                    "title": "Arg 1",
+                    "description": "this is an argument",
+                    "default": "default_value",
+                    "type": "string"
+                },
+                "arg_2": {
+                    "title": "Arg 2",
+                    "description": "this is another argument",
+                    "default": "value",
                     "type": "string"
                 }
             }
         },
         "output_schema": {
             "title": "OutputModel",
-            "description": "Example Operator",
+            "description": "Generate report and save as PDF.",
             "type": "object",
             "properties": {
                 "message": {
                     "title": "Message",
                     "description": "Output message to log",
-                    "default": "",
-                    "type": "string"
-                },
-                "output_arg_1": {
-                    "title": "Output Arg 1",
-                    "description": "description",
-                    "default": "default",
+                    "default": "Report generated successfully!",
                     "type": "string"
                 }
             }
         },
-        "secrets_schema": {
-            "title": "SecretsModel",
-            "description": "Example Operator Secrets",
-            "type": "object",
-            "properties": {
-                "EXAMPLE_VAR": {
-                    "title": "Example Var",
-                    "description": "Example secret var",
-                    "type": "string"
-                }
-            },
-            "required": [
-                "EXAMPLE_VAR"
-            ]
-        }
+        "secrets_schema": null
     }
 }
