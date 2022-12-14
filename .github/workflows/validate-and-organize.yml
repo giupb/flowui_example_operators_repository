@@ -24,7 +24,7 @@ jobs:
       - name: Pip install packages
         # using branch version to test only
         run: |
-          git config --global url."https://${{ secrets.GITHUB_TOKEN }}@github".insteadOf https://github
+          git config --global url."https://${{ secrets.ACCESS_TOKEN }}@github".insteadOf https://github
           python -m pip install -U pip
           pip install --no-cache-dir git+https://github.com/Tauffer-Consulting/flowui.git@fix/fsspec
 
