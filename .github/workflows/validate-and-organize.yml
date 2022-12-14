@@ -45,8 +45,8 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: ${{ github.ref }}
 
-      # - name: Create Release
-      #   env: 
-      #     GITHUB_REPOSITORY: ${{ github.repository }}
-      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      #   run: flowui operator release
+      - name: Create Release
+        env: 
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: flowui operator release
