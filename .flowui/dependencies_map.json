@@ -14,8 +14,8 @@
             "GetObjectFromS3Operator"
         ],
         "secrets": [
-            "GITHUB_ACCESS_TOKEN",
             "AWS_SECRET_ACCESS_KEY",
+            "GITHUB_ACCESS_TOKEN",
             "AWS_ACCESS_KEY_ID"
         ],
         "source_image": "taufferconsulting/example_project_image_0:0.2.0"
